@@ -4,6 +4,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        grotesk: ["Space Grotesk", "sans-serif"],
+        playfair: ["Playfair Display", "sans-serif"],
+      },
+    },
   },
 };
