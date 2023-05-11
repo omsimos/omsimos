@@ -7,7 +7,7 @@ type Props = {
 
 export const Layout = ({ children }: Props) => {
   return (
-    <div className="min-h-screen font-grotesk max-w-screen-xl text-white w-[90%] mx-auto">
+    <div className="min-h-screen font-grotesk max-w-screen-lg text-white w-[90%] mx-auto">
       <Navbar />
       {children}
     </div>

@@ -9,6 +9,12 @@ module.exports = {
         grotesk: ["Space Grotesk", "sans-serif"],
         playfair: ["Playfair Display", "sans-serif"],
       },
+
+      colors: {
+        primary: {
+          100: "#00FF66",
+        },
+      },
     },
   },
 };
