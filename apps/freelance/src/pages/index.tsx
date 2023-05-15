@@ -1,6 +1,8 @@
 import Image from "next/image";
 import fluidImg from "../assets/images/fluid.png";
 import starImg from "../assets/images/star.png";
+import lineImg from "../assets/images/line.png";
+import gridImg from "../assets/images/grid.png";
 
 export default function Freelance() {
   return (
@@ -28,8 +30,12 @@ export default function Freelance() {
           </h1>
 
           <Image src={starImg} className="contain absolute -right-10 flex-none w-[170px]" alt="star" />
+          <Image src={lineImg} className="contain absolute right-52 top-44 flex-none w-[700px]" alt="star" />
         </div>
+
       </div>
+
+          <Image src={gridImg} className="contain" alt="star" />
     </section>
   );
 }
