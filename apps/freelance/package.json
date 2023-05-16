@@ -12,9 +12,11 @@
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sharp": "^0.32.1",
     "ui": "workspace:*"
   },
   "devDependencies": {
+    "@omsimos/configs": "workspace:*",
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
@@ -23,7 +25,6 @@
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2",
     "tsconfig": "workspace:*",
-    "@omsimos/configs": "workspace:*",
     "typescript": "^4.5.3"
   }
 }
