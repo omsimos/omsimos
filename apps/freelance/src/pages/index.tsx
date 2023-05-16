@@ -6,8 +6,8 @@ import gridImg from "../assets/images/grid.png";
 
 export default function Freelance() {
   return (
-    <section>
-      <div className="uppercase font-light text-[7rem] leading-none">
+    <main>
+      <section className="uppercase font-light text-[7rem] leading-none">
         <h1>
           We<span className="text-primary-100">*</span> Transførm
         </h1>
@@ -29,13 +29,28 @@ export default function Freelance() {
             </span>
           </h1>
 
-          <Image src={starImg} className="contain absolute -right-10 flex-none w-[170px]" alt="star" />
-          <Image src={lineImg} className="contain absolute right-52 top-44 flex-none w-[700px]" alt="star" />
+          <Image
+            src={starImg}
+            className="contain absolute -right-10 flex-none w-[170px]"
+            alt="star"
+          />
         </div>
+      </section>
 
-      </div>
+      <section className="relative">
+        <Image src={gridImg} className="contain absolute -z-10 pointer-events-none" alt="star" />
 
-          <Image src={gridImg} className="contain" alt="star" />
-    </section>
+          <Image
+            src={lineImg}
+            className="contain w-[700px] ml-32 mt-8 pointer-events-none"
+            alt="star"
+          />
+
+        <p className='mt-8 text-5xl font-light leading-snug'>
+          Omsimos is a freelance agency based in the Philippines. We create
+          elegant websites with modern technologies.
+        </p>
+      </section>
+    </main>
   );
 }
