@@ -16,7 +16,7 @@ export default function Freelance() {
           <Image
             src={fluidImg}
             alt="fluid art"
-            className="w-[400px] h-[150px] bg-cover"
+            className="w-[400px] h-[150px] bg-cover rounded-xl"
           />
           <h1>Ideas Into</h1>
         </div>
@@ -47,7 +47,7 @@ export default function Freelance() {
           />
 
         <p className='mt-8 text-5xl font-light leading-snug'>
-          Omsimos is a freelance agency based in the Philippines. We create
+          OMSIMOS© FREELANCE is an agency based in the Philippines. We create
           elegant websites with modern technologies.
         </p>
       </section>
