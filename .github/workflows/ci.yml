@@ -37,5 +37,3 @@ jobs:
  
         - name: Build
           run: pnpm build
-          env:
-            CI: false
