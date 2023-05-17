@@ -105,20 +105,23 @@ importers:
   packages/ui:
     specifiers:
       '@omsimos/configs': workspace:*
-      '@types/react': ^17.0.37
-      '@types/react-dom': ^17.0.11
+      '@types/react': ^18.0.22
+      '@types/react-dom': ^18.0.7
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
-      react: ^17.0.2
+      next: ^13.4.2
+      react: ^18.2.0
       tsconfig: workspace:*
       typescript: ^4.5.2
+    dependencies:
+      next: 13.4.2_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       '@omsimos/configs': link:../configs
-      '@types/react': 17.0.52
-      '@types/react-dom': 17.0.18
+      '@types/react': 18.0.22
+      '@types/react-dom': 18.0.7
       eslint: 7.32.0
       eslint-config-custom: link:../eslint-config-custom
-      react: 17.0.2
+      react: 18.2.0
       tsconfig: link:../tsconfig
       typescript: 4.9.3
 
@@ -367,10 +370,10 @@ packages:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
 
-  /@types/react-dom/17.0.18:
-    resolution: {integrity: sha512-rLVtIfbwyur2iFKykP2w0pl/1unw26b5td16d5xMgp7/yjTHomkyxPYChFoCr/FtEX1lN9wY6lFj1qvKdS5kDw==}
+  /@types/react-dom/18.0.7:
+    resolution: {integrity: sha512-HaXc+BbqAZE1RdsK3tC8SbkFy6UL2xF76lT9rQs5JkPrJg3rWA3Ou/Lhw3YJQzEDkBpmJ79nBsfnd05WrBd2QQ==}
     dependencies:
-      '@types/react': 17.0.52
+      '@types/react': 18.2.6
     dev: true
 
   /@types/react-dom/18.0.9:
@@ -379,8 +382,8 @@ packages:
       '@types/react': 18.0.25
     dev: true
 
-  /@types/react/17.0.52:
-    resolution: {integrity: sha512-vwk8QqVODi0VaZZpDXQCmEmiOuyjEFPY7Ttaw5vjM112LOq37yz1CDJGrRJwA1fYEq4Iitd5rnjd1yWAc/bT+A==}
+  /@types/react/18.0.22:
+    resolution: {integrity: sha512-4yWc5PyCkZN8ke8K9rQHkTXxHIWHxLzzW6RI1kXVoepkD3vULpKzC2sDtAMKn78h92BRYuzf+7b/ms7ajE6hFw==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -389,6 +392,14 @@ packages:
 
   /@types/react/18.0.25:
     resolution: {integrity: sha512-xD6c0KDT4m7n9uD4ZHi02lzskaiqcBxf4zi+tXZY98a04wvc0hi/TcCPC2FOESZi51Nd7tlUeOJY8RofL799/g==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      '@types/scheduler': 0.16.2
+      csstype: 3.1.1
+    dev: true
+
+  /@types/react/18.2.6:
+    resolution: {integrity: sha512-wRZClXn//zxCFW+ye/D2qY65UsYP1Fpex2YXorHc8awoNamkMZSvBxwxdYVInsHOZZd2Ppq8isnSzJL5Mpf8OA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -2209,20 +2220,11 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
 
-  /react/17.0.2:
-    resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      loose-envify: 1.4.0
-      object-assign: 4.1.1
-    dev: true
-
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /read-cache/1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}

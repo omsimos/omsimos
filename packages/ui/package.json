@@ -8,13 +8,16 @@
     "lint": "eslint \"**/*.ts*\""
   },
   "devDependencies": {
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
+    "@omsimos/configs": "workspace:*",
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "tsconfig": "workspace:*",
-    "@omsimos/configs": "workspace:*",
     "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "next": "^13.4.2"
   }
 }
