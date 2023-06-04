@@ -30,22 +30,22 @@ export default function Freelance() {
 
           <Image
             src={starImg}
-            className="contain absolute -right-16 flex-none w-[170px]"
+            className="contain absolute -right-14 flex-none w-[170px]"
             alt="star"
           />
         </div>
       </section>
 
       <section className="relative">
-          <Image
-            src={lineImg}
-            className="contain w-[700px] ml-32 mt-8 pointer-events-none"
-            alt="star"
-          />
+        <Image
+          src={lineImg}
+          className="contain w-[700px] ml-96 mt-8 pointer-events-none"
+          alt="star"
+        />
 
-        <p className='mt-8 text-5xl font-light leading-snug'>
-          OMSIMOS© FREELANCE is an agency based in the Philippines. We create
-          elegant websites with modern technologies.
+        <p className="mt-12 text-5xl w-5/6 font-light leading-snug">
+          OMSIMOS© FREELANCE is an agency based in the Philippines. Dedicated to
+          deliver digital experiences with modern technologies.
         </p>
       </section>
     </main>
