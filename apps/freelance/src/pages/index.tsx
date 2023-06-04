@@ -2,12 +2,11 @@ import Image from "next/image";
 import fluidImg from "../assets/images/fluid.png";
 import starImg from "../assets/images/star.png";
 import lineImg from "../assets/images/line.png";
-import gridImg from "../assets/images/grid.png";
 
 export default function Freelance() {
   return (
     <main>
-      <section className="uppercase font-light text-[7rem] leading-none">
+      <section className="uppercase font-light text-[150px] leading-none space-y-4">
         <h1>
           We<span className="text-primary-100">*</span> Transførm
         </h1>
@@ -31,15 +30,13 @@ export default function Freelance() {
 
           <Image
             src={starImg}
-            className="contain absolute -right-10 flex-none w-[170px]"
+            className="contain absolute -right-16 flex-none w-[170px]"
             alt="star"
           />
         </div>
       </section>
 
       <section className="relative">
-        <Image src={gridImg} className="contain absolute -z-10 pointer-events-none" alt="star" />
-
           <Image
             src={lineImg}
             className="contain w-[700px] ml-32 mt-8 pointer-events-none"
