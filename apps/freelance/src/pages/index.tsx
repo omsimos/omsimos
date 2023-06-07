@@ -3,6 +3,7 @@ import fluidImg from "../assets/images/fluid.png";
 import starImg from "../assets/images/star.png";
 import lineTopImg from "../assets/images/line-top.png";
 import lineBottomImg from "../assets/images/line-bottom.png";
+import { Technologies } from "@/components";
 
 export default function Freelance() {
   return (
@@ -77,6 +78,8 @@ export default function Freelance() {
           </button>
         </div>
       </section>
+
+      <Technologies />
     </main>
   );
 }
