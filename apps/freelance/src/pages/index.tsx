@@ -1,7 +1,8 @@
 import Image from "next/image";
 import fluidImg from "../assets/images/fluid.png";
 import starImg from "../assets/images/star.png";
-import lineImg from "../assets/images/line.png";
+import lineTopImg from "../assets/images/line-top.png";
+import lineBottomImg from "../assets/images/line-bottom.png";
 
 export default function Freelance() {
   return (
@@ -38,15 +39,43 @@ export default function Freelance() {
 
       <section className="relative">
         <Image
-          src={lineImg}
+          src={lineTopImg}
           className="contain w-[700px] ml-96 mt-8 pointer-events-none"
           alt="star"
         />
 
-        <p className="mt-12 text-5xl w-5/6 font-light leading-snug">
-          OMSIMOS© FREELANCE is an agency based in the Philippines. Dedicated to
-          deliver digital experiences with modern technologies.
-        </p>
+        <div className="my-12 text-[150px] font-normal leading-none tracking-tight">
+          <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-primary-100 to-white from-70%">
+            OMSIMOS<span className="font-light text-white">©</span>
+          </h1>
+          <h1>FREELANCE</h1>
+          <p className="text-3xl w-2/3 mt-4 tracking-normal font-light text-gray-200">
+            An agency based in the Philippines. Dedicated to deliver quality
+            digital experiences!
+          </p>
+        </div>
+
+        <Image
+          src={lineBottomImg}
+          className="contain w-[500px] ml-96 mt-8 pointer-events-none"
+          alt="star"
+        />
+
+        <div>
+          <h2 className="mt-12 text-5xl leading-snug">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nobis
+            aliquam repellat obcaecati quam neque dolor libero iure praesentium
+            consequatur quos labore error magnam, tempore, dolores nostrum.
+            Error, amet dignissimos.
+          </h2>
+
+          <button
+            type="button"
+            className="border border-gray-300 text-2xl font-light mt-8 px-10 py-3 rounded-full"
+          >
+            Visit Website
+          </button>
+        </div>
       </section>
     </main>
   );
