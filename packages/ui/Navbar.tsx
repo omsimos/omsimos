@@ -1,15 +1,16 @@
 import * as React from "react";
+import { Container } from "./Container";
 
 export const Navbar = () => {
   return (
-  <nav className='flex justify-between items-center pt-12 mb-36'>
-      <h1 className='font-grotesk font-light uppercase text-xl '>Omsimos</h1>
+    <Container className="flex justify-between items-center pt-12 mb-36">
+      <h1 className="font-grotesk font-light uppercase text-xl ">Omsimos</h1>
 
-      <ul className='md:flex gap-x-24 uppercase text-sm text-gray-300 hidden'>
+      <ul className="md:flex gap-x-24 uppercase text-sm text-gray-300 hidden">
         <li>Services</li>
         <li>Projects</li>
         <li>Contact</li>
       </ul>
-    </nav>
+    </Container>
   );
 };
