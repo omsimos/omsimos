@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import { Container } from "ui";
 import { BsArrowRight } from "react-icons/bs";
@@ -39,59 +40,65 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <Container>
-      <div className="tracking-tighter uppercase my-12 text-9xl font-normal leading-none">
+    <div>
+      <Container className="tracking-tighter uppercase my-12 xl:text-9xl text-6xl sm:text-7xl md:text-8xl md:text-left text-center  font-normal leading-none">
         <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-primary-100 to-white from-70%">
           Featured
         </h1>
         <h1>Projects</h1>
-      </div>
+      </Container>
 
       {projects.map((project, i) => {
         const { name, description, thumbnail, logo, link } = project;
 
         return (
-          <div
-            key={name}
-            className={`${
-              i === 0 ? "pt-40 pb-96" : "py-96"
-            } border-b-[1.5px] border-[#3B3B3B]`}
-          >
-            <Image src={thumbnail} alt={`${name} Website Screenshot`} />
-            <Image
-              src={lineCenterImg}
+          <React.Fragment key={name}>
+            <Container
               className={`${
-                (i + 1) % 2 === 0 ? "" : "-scale-x-100"
-              } contain  w-[900px] mx-auto pointer-events-none`}
-              alt="green line"
-            />
-
-            <div
-              className={`${
-                (i + 1) % 2 === 0 ? "flex flex-row-reverse" : "flex gap-14"
-              } items-end`}
+                i === 0 ? "pt-40 xl:pb-96 pb-52" : "xl:py-96 py-52"
+              }`}
             >
-              <Image src={logo} alt={`${name} Logo`} />
+              <Image src={thumbnail} alt={`${name} Website Screenshot`} />
+              <Image
+                src={lineCenterImg}
+                className="contain w-[900px] mx-auto hidden -scale-x-100  md:block pointer-events-none"
+                alt="green line"
+              />
 
-              <div className="space-y-10">
-                <span className="text-3xl font-medium">{`(0${i + 1})`}</span>
-                <p className="text-7xl w-1/2 font-medium">{name}</p>
-                <p className="text-4xl w-3/4 text-gray-400">{description}</p>
+              <div className="flex gap-0 md:gap-14 md:flex-row flex-col-reverse items-end mt-36 md:mt-0">
+                <Image
+                  src={logo}
+                  className="md:scale-100 scale-50"
+                  alt={`${name} Logo`}
+                />
 
-                <button type="button">
-                  <a
-                    href={link}
-                    className="flex group hover:text-gray-200 transition-colors items-center gap-3 text-3xl font-medium border-b-[1.5px] border-gray-500"
-                  >
-                    <span>Visit </span>
-                    <BsArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </button>
+                <div className="md:space-y-10 space-y-7 md:text-left text-center">
+                  <span className="xl:text-3xl text-xl font-medium">{`(0${
+                    i + 1
+                  })`}</span>
+                  <p className="xl:text-7xl text-5xl mx-auto font-medium">
+                    {name}
+                  </p>
+                  <p className="xl:text-4xl text-2xl w-3/4 md:mx-0 mx-auto text-gray-400">
+                    {description}
+                  </p>
+
+                  <button type="button">
+                    <a
+                      href={link}
+                      className="flex group hover:text-gray-200 transition-colors items-center gap-3 md:text-3xl text-2xl font-medium border-b-[1.5px] border-gray-500"
+                    >
+                      <span>Visit </span>
+                      <BsArrowRight className="group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </button>
+                </div>
               </div>
-            </div>
-          </div>
+            </Container>
+            <div className="h-[1px] bg-[#3B3B3B] w-full" />
+          </React.Fragment>
         );
       })}
-    </Container>
+    </div>
   );
 };
