@@ -4,6 +4,7 @@ import starImg from "../assets/images/star.png";
 import lineTopImg from "../assets/images/line-top.png";
 import lineBottomImg from "../assets/images/line-bottom.png";
 import { Technologies } from "@/components";
+import { Projects } from "@/components/Projects";
 
 export default function Freelance() {
   return (
@@ -80,6 +81,7 @@ export default function Freelance() {
       </section>
 
       <Technologies />
+      <Projects />
     </main>
   );
 }
