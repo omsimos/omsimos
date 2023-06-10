@@ -1,13 +1,12 @@
 import Image from "next/image";
 import { Container } from "ui";
 
-import { Technologies } from "@/components";
-import { Projects } from "@/components/Projects";
+import { Technologies, Projects } from "~/components";
 
-import starImg from "../assets/images/star.png";
-import fluidImg from "../assets/images/fluid.png";
-import lineTopImg from "../assets/images/line-top.png";
-import lineBottomImg from "../assets/images/line-bottom.png";
+import starImg from "~/images/star.png";
+import fluidImg from "~/images/fluid.png";
+import lineTopImg from "~/images/line-top.png";
+import lineBottomImg from "~/images/line-bottom.png";
 
 export default function Freelance() {
   return (

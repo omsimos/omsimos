@@ -2,9 +2,9 @@ import Image from "next/image";
 import { Container } from "ui";
 import { BsArrowRight } from "react-icons/bs";
 
-import lineCenterImg from "../assets/images/line-mid.png";
-import umaminLogo from "../assets/images/projects/logo/umamin-logo.jpg";
-import umaminThumb from "../assets/images/projects/thumbnail/umamin-thumbnail.jpg";
+import lineCenterImg from "~/images/line-mid.png";
+import umaminLogo from "~/images/projects/logo/umamin-logo.jpg";
+import umaminThumb from "~/images/projects/thumbnail/umamin-thumbnail.jpg";
 
 export const Projects = () => {
   return (
