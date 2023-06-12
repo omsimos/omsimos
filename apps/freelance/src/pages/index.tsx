@@ -67,7 +67,7 @@ export default function Freelance() {
           />
 
           <div>
-            <h2 className="mt-12 text-5xl leading-snug">
+            <h2 className="mt-12 text-5xl tracking-tighter leading-snug">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nobis
               aliquam repellat obcaecati quam neque dolor libero iure
               praesentium consequatur quos labore error magnam, tempore, dolores
