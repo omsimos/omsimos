@@ -60,7 +60,7 @@ export default function Freelance() {
             </p>
           </div>
 
-          <Image
+          {/* <Image
             src={lineBottomImg}
             className="contain xl:w-[500px] md:w-96 w-72 xl:ml-96 lg:ml-60 md:ml-32 rotate-12 lg:rotate-0 mt-8 pointer-events-none"
             alt="star"
@@ -80,7 +80,7 @@ export default function Freelance() {
             >
               Visit Website
             </button>
-          </div>
+          </div> */}
         </section>
       </Container>
 
