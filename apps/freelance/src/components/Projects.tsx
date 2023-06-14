@@ -2,10 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { Container } from "ui";
 
-// import umaminThumb from "~/images/projects/thumbnail/umamin-thumbnail.jpg";
-// import portfolioThumb from "~/images/projects/thumbnail/3dportfolio-thumbnail.jpg";
-// import gdscThumb from "~/images/projects/thumbnail/gdscusls-thumbnail.jpg";
-
 import umaminLogo from "~/images/projects/logo/umamin-logo.jpg";
 import baseLogo from "~/images/projects/logo/om-logo.jpg";
 
