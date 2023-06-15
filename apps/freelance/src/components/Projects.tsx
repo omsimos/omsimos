@@ -1,97 +1,109 @@
+import React from "react";
 import Image from "next/image";
 import { Container } from "ui";
-import { BsArrowRight } from "react-icons/bs";
-
-import lineCenterImg from "~/images/line-mid.png";
-
-import umaminThumb from "~/images/projects/thumbnail/umamin-thumbnail.jpg";
-import portfolioThumb from "~/images/projects/thumbnail/3dportfolio-thumbnail.jpg";
-import gdscThumb from "~/images/projects/thumbnail/gdscusls-thumbnail.jpg";
 
 import umaminLogo from "~/images/projects/logo/umamin-logo.jpg";
-import baseLogo from "~/images/projects/logo/om-logo.jpg";
+import portLogo from "~/images/projects/logo/port-logo.jpg";
+import gdscLogo from "~/images/projects/logo/gdsc-logo.jpg";
 
 const projects = [
   {
     name: "Umamin",
     description:
       "The ultimate platform for sending and receiving anonymous messages!",
-    thumbnail: umaminThumb,
+    // thumbnail: umaminThumb,
     logo: umaminLogo,
     link: "https://umamin.link/",
   },
   {
     name: "3D Portfolio",
-    description: "An immersive 3D portfolio website for a 3D artist!",
-    thumbnail: portfolioThumb,
-    logo: baseLogo,
+    description:
+      "An interactive creative website with 3D elements, created with react-three-fiber.",
+    // thumbnail: portfolioThumb,
+    logo: portLogo,
     link: "https://daleban3d.vercel.app",
   },
   {
     name: "GDSC USLS",
     description:
       "The official website of Google Developer Student Clubs in the University of St. La Salle!",
-    thumbnail: gdscThumb,
-    logo: baseLogo,
+    // thumbnail: gdscThumb,
+    logo: gdscLogo,
     link: "https://gdsc-usls.live/",
   },
 ];
 
 export const Projects = () => {
   return (
-    <Container>
-      <div className="tracking-tighter uppercase my-12 text-9xl font-normal leading-none">
-        <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-primary-100 to-white from-70%">
-          Featured
+    <div className="border-[#3B3B3B] border-b-[1px]">
+      <Container className="tracking-tighter uppercase my-28 lg:my-44 xl:text-8xl text-6xl sm:text-7xl md:text-8xl md:text-left text-center font-normal leading-none">
+        <h1 className="text-center flex flex-col lg:block">
+          <span className="text-transparent bg-clip-text bg-gradient-to-b from-primary-100 to-white from-60% lg:mr-5">
+            Featured
+          </span>
+          <span>Projects</span>
         </h1>
-        <h1>Projects</h1>
-      </div>
+      </Container>
 
       {projects.map((project, i) => {
-        const { name, description, thumbnail, logo, link } = project;
+        const { name, description, logo, link } = project;
 
         return (
           <div
+            className="border-t-[1px] border-t-[#3B3B3B] py-36 sm:py-56 lg:py-0"
             key={name}
-            className={`${
-              i === 0 ? "pt-40 pb-96" : "py-96"
-            } border-b-[1.5px] border-[#3B3B3B]`}
           >
-            <Image src={thumbnail} alt={`${name} Website Screenshot`} />
-            <Image
-              src={lineCenterImg}
-              className={`${
-                (i + 1) % 2 === 0 ? "" : "-scale-x-100"
-              } contain  w-[900px] mx-auto pointer-events-none`}
-              alt="green line"
-            />
+            <Container>
+              <div className="lg:grid grid-cols-5 flex flex-col">
+                <div
+                  className={`border-[#3B3B3B] col-span-2 flex items-center mx-auto ${
+                    (i + 1) % 2 === 0
+                      ? "col-start-4 lg:border-l-[1px] lg:pl-20"
+                      : "col-start-1 lg:border-r-[1px] lg:pr-20"
+                  }`}
+                >
+                  <div className=" md:space-y-12 space-y-7 lg:text-left text-center">
+                    <span className="lg:text-4xl 2xl:text-5xl text-3xl font-light">{`0${
+                      i + 1
+                    }.`}</span>
+                    <p className="lg:text-6xl 2xl:text-7xl text-5xl mx-auto font-light">
+                      {name}
+                    </p>
+                    <p className="2xl:text-3xl text-2xl lg:w-full w-3/4 md:w-2/3 lg:mx-0 mx-auto text-gray-400 font-light">
+                      {description}
+                    </p>
 
-            <div
-              className={`${
-                (i + 1) % 2 === 0 ? "flex flex-row-reverse" : "flex gap-14"
-              } items-end`}
-            >
-              <Image src={logo} alt={`${name} Logo`} />
+                    <button
+                      type="button"
+                      className="border border-gray-300 text-lg lg:text-2xl font-light mt-8 px-5 lg:px-10 py-2 lg:py-3 rounded-full"
+                    >
+                      Visit Website
+                    </button>
+                  </div>
+                </div>
 
-              <div className="space-y-10">
-                <span className="text-3xl font-medium">{`(0${i + 1})`}</span>
-                <p className="text-7xl w-1/2 font-medium">{name}</p>
-                <p className="text-4xl w-3/4 text-gray-400">{description}</p>
-
-                <button type="button">
-                  <a
-                    href={link}
-                    className="flex group hover:text-gray-200 transition-colors items-center gap-3 text-3xl font-medium border-b-[1.5px] border-gray-500"
-                  >
-                    <span>Visit </span>
-                    <BsArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </button>
+                <div
+                  className={`lg:py-48 2xl:py-64 col-span-3 ${
+                    (i + 1) % 2 === 0
+                      ? "col-start-1 row-start-1 lg:mr-20 ml-auto mr-auto"
+                      : "col-start-3 lg:ml-20 ml-auto mr-auto"
+                  }`}
+                >
+                  <Image
+                    src={logo}
+                    className="2xl:scale-100 scale-50 lg:scale-75 "
+                    alt={`${name} Logo`}
+                    width={500}
+                  />
+                  <p className="text-gray-400 mt-2 text-center sm:-translate-y-36 -translate-y-28 lg:-translate-y-16 2xl:-translate-y-0  2xl:text-left">
+                    Website * Mobile
+                  </p>
+                </div>
               </div>
-            </div>
+            </Container>
           </div>
         );
       })}
-    </Container>
+    </div>
   );
 };
