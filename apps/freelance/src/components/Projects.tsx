@@ -16,7 +16,8 @@ const projects = [
   },
   {
     name: "3D Portfolio",
-    description: "An immersive 3D portfolio website for a 3D artist!",
+    description:
+      "An interactive creative website with 3D elements, created with react-three-fiber.",
     // thumbnail: portfolioThumb,
     logo: baseLogo,
     link: "https://daleban3d.vercel.app",
@@ -34,12 +35,12 @@ const projects = [
 export const Projects = () => {
   return (
     <div className="border-[#3B3B3B] border-b-[1px]">
-      <Container className="tracking-tighter uppercase my-44 xl:text-8xl text-6xl sm:text-7xl md:text-8xl md:text-left text-center font-normal leading-none">
-        <h1 className="text-center">
-          <span className="text-transparent bg-clip-text bg-gradient-to-b from-primary-100 to-white from-60% mr-5">
+      <Container className="tracking-tighter uppercase my-28 lg:my-44 xl:text-8xl text-6xl sm:text-7xl md:text-8xl md:text-left text-center font-normal leading-none">
+        <h1 className="text-center flex flex-col lg:block">
+          <span className="text-transparent bg-clip-text bg-gradient-to-b from-primary-100 to-white from-60% lg:mr-5">
             Featured
           </span>
-          Projects
+          <span>Projects</span>
         </h1>
       </Container>
 
@@ -47,24 +48,27 @@ export const Projects = () => {
         const { name, description, logo, link } = project;
 
         return (
-          <div className="border-t-[1px] border-t-[#3B3B3B]" key={name}>
+          <div
+            className="border-t-[1px] border-t-[#3B3B3B] py-36 sm:py-56 lg:py-0"
+            key={name}
+          >
             <Container>
-              <div className="grid grid-cols-5">
+              <div className="lg:grid grid-cols-5 flex flex-col">
                 <div
-                  className={`border-[#3B3B3B] col-span-2 flex items-center  ${
+                  className={`border-[#3B3B3B] col-span-2 flex items-center mx-auto ${
                     (i + 1) % 2 === 0
-                      ? "col-start-4 border-l-[1px] pl-20"
-                      : "col-start-1 border-r-[1px] pr-20"
+                      ? "col-start-4 lg:border-l-[1px] lg:pl-20"
+                      : "col-start-1 lg:border-r-[1px] lg:pr-20"
                   }`}
                 >
-                  <div className=" md:space-y-12 space-y-7 md:text-left text-center ">
-                    <span className="xl:text-5xl text-3xl font-light">{`0${
+                  <div className=" md:space-y-12 space-y-7 lg:text-left text-center">
+                    <span className="lg:text-4xl 2xl:text-5xl text-3xl font-light">{`0${
                       i + 1
                     }.`}</span>
-                    <p className="xl:text-7xl text-5xl mx-auto font-light">
+                    <p className="lg:text-6xl 2xl:text-7xl text-5xl mx-auto font-light">
                       {name}
                     </p>
-                    <p className="xl:text-3xl text-2xl md:w-full md:mx-0 mx-auto text-gray-400 font-light">
+                    <p className="2xl:text-3xl text-2xl lg:w-full w-3/4 md:w-2/3 lg:mx-0 mx-auto text-gray-400 font-light">
                       {description}
                     </p>
 
@@ -78,19 +82,21 @@ export const Projects = () => {
                 </div>
 
                 <div
-                  className={` py-48 col-span-3 ${
+                  className={`lg:py-48 2xl:py-64 col-span-3 ${
                     (i + 1) % 2 === 0
-                      ? "col-start-1 row-start-1 mr-20 ml-auto"
-                      : "col-start-3 ml-20"
+                      ? "col-start-1 row-start-1 lg:mr-20 ml-auto mr-auto"
+                      : "col-start-3 lg:ml-20 ml-auto mr-auto"
                   }`}
                 >
                   <Image
                     src={logo}
-                    className="md:scale-100 scale-50 "
+                    className="2xl:scale-100 scale-50 lg:scale-75 "
                     alt={`${name} Logo`}
                     width={500}
                   />
-                  <p className="text-gray-400 mt-2">Website * Mobile</p>
+                  <p className="text-gray-400 mt-2 text-center sm:-translate-y-36 -translate-y-28 lg:-translate-y-16 2xl:-translate-y-0  2xl:text-left">
+                    Website * Mobile
+                  </p>
                 </div>
               </div>
             </Container>
