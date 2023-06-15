@@ -3,7 +3,8 @@ import Image from "next/image";
 import { Container } from "ui";
 
 import umaminLogo from "~/images/projects/logo/umamin-logo.jpg";
-import baseLogo from "~/images/projects/logo/om-logo.jpg";
+import portLogo from "~/images/projects/logo/port-logo.jpg";
+import gdscLogo from "~/images/projects/logo/gdsc-logo.jpg";
 
 const projects = [
   {
@@ -19,7 +20,7 @@ const projects = [
     description:
       "An interactive creative website with 3D elements, created with react-three-fiber.",
     // thumbnail: portfolioThumb,
-    logo: baseLogo,
+    logo: portLogo,
     link: "https://daleban3d.vercel.app",
   },
   {
@@ -27,7 +28,7 @@ const projects = [
     description:
       "The official website of Google Developer Student Clubs in the University of St. La Salle!",
     // thumbnail: gdscThumb,
-    logo: baseLogo,
+    logo: gdscLogo,
     link: "https://gdsc-usls.live/",
   },
 ];
