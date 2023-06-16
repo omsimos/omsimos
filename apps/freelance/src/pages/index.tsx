@@ -41,7 +41,7 @@ export default function Freelance() {
 
               <Image
                 src={lineTopImg}
-                className="contain xl:w-[700px] w-[300px] xl:mt-8 mt-4 xl:right-7 right-4 pointer-events-none absolute"
+                className="object-contain [width:clamp(300px,70%,700px)] xl:mt-8 mt-4 xl:right-7 right-4 pointer-events-none absolute"
                 alt="line"
               />
             </div>
@@ -54,7 +54,7 @@ export default function Freelance() {
           </div>
         </section>
 
-        <section className="relative">
+        <section className="relative [margin-top:clamp(192px,45%,500px)]">
           <div className="my-12 [font-size:clamp(60px,10vw,150px)] font-normal leading-none tracking-tight">
             <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-primary-100 to-white from-70%">
               OMSIMOS<span className="font-light text-white">©</span>
