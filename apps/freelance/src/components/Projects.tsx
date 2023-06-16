@@ -36,7 +36,7 @@ const projects = [
 export const Projects = () => {
   return (
     <div className="border-[#3B3B3B] border-b-[1px]">
-      <Container className="tracking-tighter uppercase my-28 lg:my-44 xl:text-8xl text-6xl sm:text-7xl md:text-8xl md:text-left text-center font-normal leading-none">
+      <Container className="tracking-tighter uppercase mb-36 xl:mb-60 xl:text-8xl text-6xl sm:text-7xl md:text-8xl md:text-left text-center font-normal leading-none">
         <h1 className="text-center flex flex-col lg:block">
           <span className="text-transparent bg-clip-text bg-gradient-to-b from-primary-100 to-white from-60% lg:mr-5">
             Featured
@@ -63,19 +63,19 @@ export const Projects = () => {
                   }`}
                 >
                   <div className=" md:space-y-12 space-y-7 lg:text-left text-center">
-                    <span className="lg:text-4xl 2xl:text-5xl text-3xl font-light">{`0${
+                    <span className="xl:text-4xl lg:text-3xl 2xl:text-5xl text-2xl font-light">{`0${
                       i + 1
                     }.`}</span>
-                    <p className="lg:text-6xl 2xl:text-7xl text-5xl mx-auto font-light">
+                    <p className="xl:text-6xl lg:text-5xl 2xl:text-7xl text-4xl mx-auto font-light">
                       {name}
                     </p>
-                    <p className="2xl:text-3xl text-2xl lg:w-full w-3/4 md:w-2/3 lg:mx-0 mx-auto text-gray-400 font-light">
+                    <p className="2xl:text-3xl lg:text-2xl text-xl lg:w-full w-3/4 md:w-2/3 lg:mx-0 mx-auto text-gray-400 font-light">
                       {description}
                     </p>
 
                     <button
                       type="button"
-                      className="border border-gray-300 text-lg lg:text-2xl font-light mt-8 px-5 lg:px-10 py-2 lg:py-3 rounded-full"
+                      className="border border-gray-300 text-lg xl:text-2xl font-light mt-8 px-5 xl:px-10 py-2 xl:py-3 rounded-full"
                     >
                       Visit Website
                     </button>
@@ -83,7 +83,7 @@ export const Projects = () => {
                 </div>
 
                 <div
-                  className={`lg:py-48 2xl:py-64 col-span-3 ${
+                  className={`lg:py-48 2xl:py-96 col-span-3 ${
                     (i + 1) % 2 === 0
                       ? "col-start-1 row-start-1 lg:mr-20 ml-auto mr-auto"
                       : "col-start-3 lg:ml-20 ml-auto mr-auto"
@@ -95,7 +95,7 @@ export const Projects = () => {
                     alt={`${name} Logo`}
                     width={500}
                   />
-                  <p className="text-gray-400 mt-2 text-center sm:-translate-y-36 -translate-y-28 lg:-translate-y-16 2xl:-translate-y-0  2xl:text-left">
+                  <p className="text-gray-400 mt-2 text-center sm:-translate-y-32 -translate-y-[6.5rem] lg:-translate-y-16 2xl:-translate-y-0  2xl:text-left">
                     Website * Mobile
                   </p>
                 </div>
