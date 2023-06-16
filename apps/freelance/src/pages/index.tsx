@@ -11,11 +11,25 @@ export default function Freelance() {
   return (
     <main>
       <Container>
-        <section className="uppercase font-light md:[font-size:clamp(80px,11vw,150px)] [font-size:clamp(50px,14vw,90px)] leading-none lg:space-y-4 space-y-2">
-          <h1>
-            We<span className="text-primary-100">*</span>
-            <br className="md:hidden" />
-            Transførm
+        <section className="uppercase font-light md:[font-size:clamp(80px,11vw,155px)] [font-size:clamp(50px,14vw,90px)] leading-none lg:space-y-4 space-y-2">
+          <div className="md:hidden">
+            <div className='flex gap-x-4 items-center mb-2'>
+              <h1>
+                We<span className="text-primary-100">*</span>
+              </h1>
+              <Image
+                src={fluidImg}
+                alt="fluid art"
+                className="h-[70px] w-[200px] object-cover rounded-md"
+              />
+            </div>
+
+            <h1>Transførm</h1>
+          </div>
+
+          <h1 className="hidden md:block">
+            We<span className="text-primary-100">* </span>
+            Transform
           </h1>
 
           <div className="flex xl:gap-x-12 gap-x-6 items-center">
@@ -41,14 +55,14 @@ export default function Freelance() {
 
               <Image
                 src={lineTopImg}
-                className="object-contain [width:clamp(300px,70%,700px)] xl:mt-8 mt-4 xl:right-7 right-4 pointer-events-none absolute"
+                className="object-contain [width:clamp(300px,70%,700px)] xl:mt-8 mt-4 xl:right-10 sm:right-8 right-5 pointer-events-none absolute"
                 alt="line"
               />
             </div>
 
             <Image
               src={starImg}
-              className="contain absolute -right-14 flex-none w-[170px] hidden lg:block"
+              className="contain absolute -right-14 flex-none w-[170px] hidden xl:block"
               alt="star"
             />
           </div>
