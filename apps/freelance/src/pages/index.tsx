@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Container } from "ui";
 
-import { Technologies, Projects } from "~/components";
+import { Technologies, Projects, About } from "~/components";
 
 import starImg from "~/images/star.png";
 import fluidImg from "~/images/fluid.png";
@@ -13,7 +13,7 @@ export default function Freelance() {
       <Container>
         <section className="uppercase font-light md:[font-size:clamp(80px,11vw,155px)] [font-size:clamp(50px,14vw,90px)] leading-none lg:space-y-4 space-y-2">
           <div className="md:hidden">
-            <div className='flex gap-x-4 items-center mb-2'>
+            <div className="flex gap-x-4 items-center mb-2">
               <h1>
                 We<span className="text-primary-100">*</span>
               </h1>
@@ -84,24 +84,7 @@ export default function Freelance() {
 
       <Technologies />
       <Projects />
-
-      {/* <Container>
-        <div>
-          <h2 className="mt-12 xl:text-5xl text-2xl sm:text-3xl lg:text-4xl tracking-tighter lg:leading-snug  leading-snug md:leading-snug  xl:leading-snug">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nobis
-            aliquam repellat obcaecati quam neque dolor libero iure praesentium
-            consequatur quos labore error magnam, tempore, dolores nostrum.
-            Error, amet dignissimos.
-          </h2>
-
-          <button
-            type="button"
-            className="border border-gray-300 text-lg lg:text-2xl font-light mt-8 px-5 lg:px-10 py-2 lg:py-3 rounded-full"
-          >
-            Visit Website
-          </button>
-        </div>
-      </Container> */}
+      <About />
     </main>
   );
 }
