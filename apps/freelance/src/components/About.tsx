@@ -1,12 +1,15 @@
 import React from "react";
 import { Container } from "ui";
+import { RiAsterisk } from "react-icons/ri";
 
 export const About = () => {
   return (
-    <section className="py-64 border-y-[1px] border-y-[#3B3B3B]">
-      <div className="mb-52 flex items-center gap-10 overflow-x-hidden [font-size:clamp(60px,10vw,200px)] h-fit">
+    <section className="xl:py-64 py-44 md:py-52 border-y-[1px] border-y-[#3B3B3B] overflow-x-hidden">
+      <div className="lg:mb-52 mb-20 flex items-center gap-5 md:gap-10 [font-size:clamp(60px,10vw,200px)]">
         <span>OMSIMOS</span>
-        <span className="text-primary-100 scale-150 h-fit">*</span>
+        <span>
+          <RiAsterisk className="text-primary-100" />
+        </span>
         <span>COLLECTIVE</span>
       </div>
 
