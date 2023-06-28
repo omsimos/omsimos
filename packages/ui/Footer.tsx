@@ -12,61 +12,74 @@ const footerData = [
     contents: [
       {
         title: "Our Story",
-        link: "a",
+        link: "#",
       },
       {
-        title: "b",
-        link: "v",
+        title: "The Team",
+        link: "#",
       },
       {
-        title: "a",
-        link: "d",
+        title: "Collective",
+        link: "#",
       },
       {
-        title: "a",
-        link: "d",
-      },
-    ],
-  },
-  {
-    title: "Omsimos",
-    contents: [
-      {
-        title: "Our Story",
-        link: "a",
-      },
-      {
-        title: "b",
-        link: "v",
-      },
-      {
-        title: "a",
-        link: "d",
-      },
-      {
-        title: "a",
-        link: "d",
+        title: "Freelance",
+        link: "#",
       },
     ],
   },
   {
-    title: "Omsimos",
+    title: "Services",
     contents: [
       {
-        title: "Our Story",
-        link: "a",
+        title: "UI Design",
+        link: "#",
       },
       {
-        title: "b",
-        link: "v",
+        title: "Website",
+        link: "#",
       },
       {
-        title: "a",
-        link: "d",
+        title: "Graphic Design",
+        link: "#",
       },
       {
-        title: "a",
-        link: "d",
+        title: "Custom Request",
+        link: "#",
+      },
+    ],
+  },
+  {
+    title: "Projects",
+    contents: [
+      {
+        title: "Umamnin",
+        link: "https://umamin.link/",
+      },
+      {
+        title: "3D Portfolio",
+        link: "https://daleban3d.vercel.app/",
+      },
+      {
+        title: "GDSC USLS",
+        link: "https://gdsc-usls.live/",
+      },
+    ],
+  },
+  {
+    title: "Connect",
+    contents: [
+      {
+        title: "Facebook",
+        link: "#",
+      },
+      {
+        title: "Instagram",
+        link: "#",
+      },
+      {
+        title: "GitHub",
+        link: "https://github.com/omsimos",
       },
     ],
   },
@@ -76,31 +89,44 @@ export const Footer = ({ type, description }: FooterProps) => {
   return (
     <footer>
       <Container>
-        <p>{description}</p>
-        <BsArrowUpCircle className="text-white" />
+        <p className="w-1/2 my-20  xl:text-8xl text-6xl sm:text-7xl md:text-8xl uppercase font-light">
+          {description}
+        </p>
       </Container>
 
-      <Container>
-        <div>
-          <p>
-            OMSIMOS <span>&copy;</span> {type}
-          </p>
-        </div>
-        {footerData.map(({ title, contents }) => (
-          <div key={title}>
-            <span>{title}</span>
-            <ul>
-              {contents.map((content) => (
-                <li key={content.title}>
-                  <a href={content.link}>{content.title}</a>
-                </li>
-              ))}
-            </ul>
+      <div className="border-t-[1px] border-[#3B3B3B]">
+        <Container className="py-10">
+          <div>
+            <p className="lg:text-3xl md:text-2xl text-xl uppercase flex justify-between">
+              <span>
+                OMSIMOS<span className="text-primary-100">&copy;</span> {type}
+              </span>
+              <BsArrowUpCircle className="text-white" />
+            </p>
           </div>
-        ))}
 
-        <p>Omsimos &copy; 2023 All Rights Reserved</p>
-      </Container>
+          <div className="flex justify-between mt-20 font-light">
+            {footerData.map(({ title, contents }) => (
+              <div key={title} className="space-y-3">
+                <span className="text-gray-400 text-lg">{title}</span>
+                <ul className="text-xl space-y-2">
+                  {contents.map((content) => (
+                    <li
+                      key={content.title}
+                      className="hover:text-gray-300 transition-colors"
+                    >
+                      <a href={content.link}>{content.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="text-gray-400 text-xl text-center mt-36">
+            Omsimos &copy; 2023 All Rights Reserved
+          </p>
+        </Container>
+      </div>
     </footer>
   );
 };
