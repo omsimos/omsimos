@@ -73,12 +73,15 @@ export const Projects = () => {
                       {description}
                     </p>
 
-                    <button
-                      type="button"
-                      className="border border-gray-300 text-lg xl:text-2xl font-light mt-8 px-5 xl:px-10 py-2 xl:py-3 rounded-full"
-                    >
-                      Visit Website
-                    </button>
+                    <a href={link} target="_blank">
+                      <button
+                        type="button"
+                        className="border border-gray-300 text-lg 
+                        xl:text-2xl font-light mt-8 px-5 xl:px-10 py-2 xl:py-3 rounded-full"
+                      >
+                        Visit Website
+                      </button>
+                    </a>
                   </div>
                 </div>
 
