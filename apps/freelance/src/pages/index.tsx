@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Container } from "ui";
+import { Container, Footer } from "ui";
 
 import { Technologies, Projects, About } from "~/components";
 
@@ -85,6 +85,7 @@ export default function Freelance() {
       <Technologies />
       <Projects />
       <About />
+      <Footer type="freelance" description="Let's build your idea" />
     </main>
   );
 }

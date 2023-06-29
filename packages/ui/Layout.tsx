@@ -3,7 +3,7 @@ import { Navbar } from "./Navbar";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="min-h-screen font-grotesk text-white pb-32">
+    <div className="min-h-screen font-grotesk text-white">
       <Navbar />
       <>{children}</>
     </div>
