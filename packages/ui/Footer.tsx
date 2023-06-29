@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Container } from "./Container";
 import { BsArrowUpCircle } from "react-icons/bs";
 
@@ -89,23 +90,24 @@ export const Footer = ({ type, description }: FooterProps) => {
   return (
     <footer>
       <Container>
-        <p className="w-1/2 my-20  xl:text-8xl text-6xl sm:text-7xl md:text-8xl uppercase font-light">
+        <p className="lg:w-1/2 sm:w-5/6 w-11/12 my-20 xl:text-8xl text-6xl sm:text-7xl md:text-8xl uppercase font-light">
           {description}
         </p>
       </Container>
 
       <div className="border-t-[1px] border-[#3B3B3B]">
         <Container className="py-10">
-          <div>
-            <p className="lg:text-3xl md:text-2xl text-xl uppercase flex justify-between">
+          <div className="flex justify-between">
+            <p className="lg:text-3xl md:text-3xl text-2xl uppercase">
               <span>
-                OMSIMOS<span className="text-primary-100">&copy;</span> {type}
+                OMSIMOS
+                <span className="text-primary-100">&copy;</span> {type}
               </span>
-              <BsArrowUpCircle className="text-white" />
             </p>
+            <BsArrowUpCircle className="text-white cursor-pointer lg:text-5xl md:text-4xl text-3xl" />
           </div>
 
-          <div className="flex justify-between mt-20 font-light">
+          <div className="flex md:justify-between mt-20 font-light gap-14 flex-wrap">
             {footerData.map(({ title, contents }) => (
               <div key={title} className="space-y-3">
                 <span className="text-gray-400 text-lg">{title}</span>
