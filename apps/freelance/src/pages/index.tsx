@@ -9,9 +9,9 @@ export default function Freelance() {
     <main>
       <section>
         <Container>
-          <h1 className="absolute bg-clip-text text-transparent tracking-tight bg-gradient-to-tr from-[#8c8c8c] to-white lg:text-5xl md:mt-52 sm:mt-20  lg:leading-[1.1] text-2xl sm:text-3xl md:text-4xl">
+          <h1 className="absolute bg-gradient-to-tr from-[#8c8c8c] to-white bg-clip-text text-2xl tracking-tight text-transparent sm:mt-20 sm:text-3xl  md:mt-52 md:text-4xl lg:text-5xl lg:leading-[1.1]">
             We transform ideas <br /> into digital
-            <span className="bg-clip-text text-transparent bg-gradient-to-tr  from-green-900 to-green-300 ">
+            <span className="bg-gradient-to-tr from-green-900 to-green-300  bg-clip-text text-transparent ">
               {" "}
               —{" "}
             </span>
@@ -23,7 +23,7 @@ export default function Freelance() {
           priority
           quality={100}
           alt="bg image"
-          className="h-full w-full pointer-events-none md:mt-0 sm:mt-28  mt-44"
+          className="pointer-events-none mt-44 h-full w-full sm:mt-28  md:mt-0"
         />
       </section>
       <Technologies />
