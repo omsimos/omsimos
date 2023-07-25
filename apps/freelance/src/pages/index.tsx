@@ -25,10 +25,10 @@ export default function Freelance() {
           alt="bg image"
           className="pointer-events-none mt-44 h-full w-full sm:mt-28  md:mt-0"
         />
+        <About />
       </section>
       <Technologies />
       <Projects />
-      <About />
       <Footer type="freelance" description="Let's build your idea" />
     </main>
   );
