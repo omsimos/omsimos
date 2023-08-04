@@ -6,14 +6,14 @@ import gradientSide from "~/images/gradient-side.jpg";
 
 export const About = () => {
   return (
-    <section className="relative bottom-96 overflow-x-hidden py-44 md:py-52 xl:py-64">
+    <section className="relative bottom-[35rem]">
       <div className="space-y-56">
         <Container>
           <h2 className="bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-2xl tracking-tight text-transparent sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.1]">
             About us
           </h2>
 
-          <h2 className="mt-5 w-3/4 text-xl leading-snug tracking-tighter sm:text-2xl md:mt-6 md:leading-snug lg:text-3xl lg:leading-snug xl:mt-12 xl:text-4xl xl:leading-snug">
+          <h2 className="mt-5 w-3/4 text-xl font-light leading-snug tracking-tighter sm:text-2xl md:mt-6 md:leading-snug lg:text-3xl lg:leading-snug xl:mt-12 xl:text-4xl xl:leading-snug">
             We are a team of passionate developers, designers, and digital
             enthusiasts. Our shared vision is to ignite the digital landscape
             with creativity and innovation by transforming ideas into
@@ -28,7 +28,7 @@ export const About = () => {
           </button>
         </Container>
 
-        <div className="flex w-screen items-center gap-5 bg-gradient-to-t from-[#8c8c8c] to-white bg-clip-text text-transparent [font-size:clamp(60px,10vw,200px)] md:gap-10">
+        <div className="flex w-screen items-center gap-5 overflow-x-hidden bg-gradient-to-t from-[#8c8c8c] to-white bg-clip-text text-transparent [font-size:clamp(60px,10vw,200px)] md:gap-10">
           <span>OMSIMOS</span>
           <span>
             <RiAsterisk className="text-primary-100" />
@@ -49,7 +49,7 @@ export const About = () => {
             Your Vision, Our Mission
           </h2>
 
-          <h2 className="mt-5 w-3/4 text-xl leading-snug tracking-tighter sm:text-2xl md:mt-6 md:leading-snug lg:text-3xl lg:leading-snug xl:mt-12 xl:text-4xl xl:leading-snug">
+          <h2 className="mt-5 w-3/4 text-xl font-light leading-snug tracking-tighter sm:text-2xl md:mt-6 md:leading-snug lg:text-3xl lg:leading-snug xl:mt-12 xl:text-4xl xl:leading-snug">
             When you bring your ideas to us, we embark on a collaborative
             journey to turn them into a digital masterpiece. Whether it&apos;s
             web development, web design, logo design, graphics design, layout,
