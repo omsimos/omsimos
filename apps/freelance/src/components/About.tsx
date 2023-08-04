@@ -9,7 +9,7 @@ export const About = () => {
     <section className="relative bottom-[35rem]">
       <div className="space-y-56">
         <Container>
-          <h2 className="bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-2xl tracking-tight text-transparent sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.1]">
+          <h2 className="bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-2xl tracking-tight text-transparent sm:text-3xl md:text-4xl lg:text-6xl lg:leading-[1.1]">
             About us
           </h2>
 
@@ -45,7 +45,7 @@ export const About = () => {
         />
 
         <Container className="translate-x-48">
-          <h2 className="bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-2xl tracking-tight text-transparent sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.1]">
+          <h2 className="bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-2xl tracking-tight text-transparent sm:text-3xl md:text-4xl lg:text-6xl lg:leading-[1.1]">
             Your Vision, Our Mission
           </h2>
 
