@@ -19,7 +19,7 @@ export default function Freelance() {
           priority
           quality={100}
           alt="bg image"
-          className="pointer-events-none mt-44 h-full w-full sm:mt-28  md:mt-0"
+          className="pointer-events-none -z-20 mt-44 h-full w-full sm:mt-28 md:mt-0"
         />
         <About />
       </section>

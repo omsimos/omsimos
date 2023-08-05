@@ -42,7 +42,7 @@ export const Projects = () => {
           Projects
         </h2>
       </Container>
-      <div className="grid grid-cols-3">
+      <div className="grid xl:grid-cols-3">
         {projects.map((project, i) => {
           const { name, description, logo, link } = project;
 
