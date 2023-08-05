@@ -13,11 +13,11 @@ export const Button = ({ className, name, ...rest }: Props) => {
   return (
     <button
       type="button"
-      className={`mt-8 flex items-center gap-2 border-b-[1px] pb-1 text-lg font-light transition-all ease-out hover:gap-5 xl:text-2xl md:text-xl ${className}`}
+      className={`flex items-center gap-2 border-b-[1px] pb-1 text-lg font-light transition-opacity ease-out group/button xl:text-2xl md:text-xl hover:opacity-80 ${className}`}
       {...rest}
     >
       {name}
-      <TfiArrowRight />
+      <TfiArrowRight className="group-hover/button:translate-x-3 duration-200 transition-transform ease-out" />
     </button>
   );
 };
