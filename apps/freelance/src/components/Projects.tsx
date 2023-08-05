@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Container } from "ui";
+import { Button, Container } from "ui";
 
 import umaminLogo from "~/images/projects/logo/umamin-logo.jpg";
 import portLogo from "~/images/projects/logo/port-logo.jpg";
@@ -71,33 +71,9 @@ export const Projects = () => {
               />
 
               <a href={link} target="_blank">
-                <button
-                  type="button"
-                  className="mt-8 flex items-center gap-2 border-b-[1px] pb-1 text-lg font-light transition-all  ease-out hover:gap-5 xl:text-xl"
-                >
-                  Visit Website
-                  <TfiArrowRight />
-                </button>
+                <Button name="Visit Website" />
               </a>
             </div>
-
-            //       <div
-            //         className={`col-span-3 lg:py-48 2xl:py-96 ${
-            //           (i + 1) % 2 === 0
-            //             ? "col-start-1 row-start-1 ml-auto mr-auto lg:mr-20"
-            //             : "col-start-3 ml-auto mr-auto lg:ml-20"
-            //         }`}
-            //       >
-            //         <Image
-            //           src={logo}
-            //           className="scale-50 lg:scale-75 2xl:scale-100 "
-            //           alt={`${name} Logo`}
-            //           width={500}
-            //         />
-            //         <p className="mt-2 -translate-y-[6.5rem] text-center text-gray-400 sm:-translate-y-32 lg:-translate-y-16 2xl:-translate-y-0  2xl:text-left">
-            //           Website * Mobile
-            //         </p>
-            // </div>
           );
         })}
       </div>

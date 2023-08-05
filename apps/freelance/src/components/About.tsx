@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Container } from "ui";
+import { Button, Container } from "ui";
 import { RiAsterisk } from "react-icons/ri";
 import gradientSide from "~/images/gradient-side.jpg";
 
@@ -25,12 +25,7 @@ export const About = () => {
           innovation by transforming ideas into digital realities.
         </h2>
 
-        <button
-          type="button"
-          className="text-md rounded-full border border-gray-300 px-5 py-2 font-light md:text-lg lg:px-10 lg:py-3 lg:text-2xl"
-        >
-          Our Story
-        </button>
+        <Button name="Our Story" />
       </Container>
 
       <div className="flex w-screen items-center gap-5 overflow-x-hidden bg-gradient-to-t from-[#8c8c8c] to-white bg-clip-text text-transparent [font-size:clamp(60px,10vw,200px)] md:gap-10">
@@ -53,12 +48,7 @@ export const About = () => {
           creative process to craft solutions that resonate with your vision.{" "}
         </h2>
 
-        <button
-          type="button"
-          className="text-md rounded-full border border-gray-300 px-5 py-2 font-light md:text-lg lg:px-10 lg:py-3 lg:text-2xl"
-        >
-          Meet the team
-        </button>
+        <Button name="Meet the team" />
       </Container>
     </section>
   );
