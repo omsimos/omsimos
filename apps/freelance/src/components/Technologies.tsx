@@ -40,21 +40,23 @@ export const Technologies = () => {
         priority
         quality={100}
         alt="side gradient"
-        className="pointer-events-none absolute -top-48 right-0 -z-10 h-[230%] -scale-x-100 mix-blend-screen"
+        className="pointer-events-none absolute -top-72 right-0 -z-10 h-full -scale-x-100 mix-blend-screen sm:h-[230%] lg:-top-48"
       />
 
       <Container>
-        <h3 className="mb-20 bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-2xl tracking-tight text-transparent sm:text-3xl md:text-5xl lg:leading-[1.1]">
+        <h3 className="mb-20 bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-center text-2xl tracking-tight text-transparent sm:text-3xl md:text-left md:text-5xl lg:leading-[1.1]">
           Powering your website <br /> with modern technologies
         </h3>
-        <div className="flex flex-wrap gap-12">
+        <div className="flex flex-wrap justify-center gap-12 md:justify-start">
           {icons.map((icon) => (
             <div
-              key={icon.toString()}
-              className="flex h-72 w-72 flex-col justify-between rounded-xl border-[1px] border-gray-600 p-10"
+              key={icon.component.toString()}
+              className="flex h-64 w-64 flex-col justify-between rounded-xl border-[1px] border-gray-600 p-10 md:h-72 md:w-72"
             >
               <icon.component className="text-4xl text-gray-100 xl:text-5xl" />
-              <p className="text-xl font-light">{icon.description}</p>
+              <p className="text-lg font-light md:text-xl">
+                {icon.description}
+              </p>
             </div>
           ))}
         </div>
