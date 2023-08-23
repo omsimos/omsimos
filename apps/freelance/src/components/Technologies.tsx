@@ -34,7 +34,7 @@ export const Technologies = () => {
     },
   ];
   return (
-    <section className="relative mb-56 xl:mb-96">
+    <section className="relative mb-80 lg:mb-[30rem]">
       <Image
         src={gradientSide}
         priority

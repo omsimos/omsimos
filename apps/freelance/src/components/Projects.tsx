@@ -6,8 +6,6 @@ import umaminLogo from "~/images/projects/logo/umamin-logo.jpg";
 import portLogo from "~/images/projects/logo/port-logo.jpg";
 import gdscLogo from "~/images/projects/logo/gdsc-logo.jpg";
 
-import { TfiArrowRight } from "react-icons/tfi";
-
 const projects = [
   {
     name: "Umamin",
@@ -37,7 +35,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <div className="border-b-[1px] border-gray-600">
+    <div className="mb-80 border-b-[1px] border-gray-600 lg:mb-[30rem]">
       <Container>
         <h3 className="mb-20 bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-center text-2xl tracking-tight text-transparent sm:text-3xl md:text-5xl lg:leading-[1.1]">
           Featured Projects

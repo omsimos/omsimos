@@ -6,7 +6,7 @@ import gradientSide from "~/images/gradient-side.jpg";
 
 export const About = () => {
   return (
-    <section className="relative bottom-[30rem] space-y-60 md:bottom-[45rem] md:space-y-72 xl:bottom-[60rem] xl:space-y-96 2xl:bottom-[70rem]">
+    <section className="relative mb-80 mt-[30rem] space-y-60 sm:mt-[35rem] md:mt-[40rem] md:space-y-72 lg:mb-[30rem] lg:mt-[50rem] xl:mt-[70rem] xl:space-y-96 2xl:mt-[80rem]">
       <Image
         src={gradientSide}
         priority
