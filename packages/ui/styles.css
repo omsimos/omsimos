@@ -1,9 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #000;
+@layer components {
+  body {
+    background-color: #000;
+  }
+
+  .hover-effect {
+    cursor: pointer;
+    position: relative;
+  }
+
+  .hover-effect:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    display: block;
+    right: 0;
+    background: #02ff67;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+  }
+
+  .hover-effect:hover:after {
+    width: 100%;
+    left: 0;
+  }
 }
