@@ -28,7 +28,7 @@ export default function Freelance() {
       <About />
       <Technologies />
       <Projects />
-      <Footer type="freelance" description="Let's build your idea" />
+      <Footer type="freelance" description="Let's weave your dream" />
     </main>
   );
 }
