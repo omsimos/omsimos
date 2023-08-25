@@ -103,7 +103,13 @@ export const Footer = ({ type, description }: FooterProps) => {
                 <span className="text-primary-100">&copy;</span> {type}
               </span>
             </p>
-            <BsArrowUpCircle className="text-white cursor-pointer lg:text-5xl md:text-4xl text-3xl" />
+
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <BsArrowUpCircle className="text-white cursor-pointer lg:text-5xl md:text-4xl text-3xl" />
+            </button>
           </div>
 
           <div className="flex md:justify-between mt-20 font-light gap-14 flex-wrap">
