@@ -60,7 +60,7 @@ export const Footer = ({ type, description }: FooterProps) => {
   return (
     <footer>
       <Container>
-        <p className="lg:w-1/2 sm:w-5/6 w-11/12 my-20 xl:text-8xl text-6xl sm:text-7xl md:text-8xl uppercase font-light">
+        <p className="my-20 xl:text-8xl text-6xl sm:text-7xl md:text-8xl uppercase font-light bg-gradient-to-tr from-[#8c8c8c] to-white bg-clip-text text-transparent md:max-w-[700px] max-w-[500px]">
           {description}
         </p>
       </Container>
