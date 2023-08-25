@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Container } from "./Container";
 import { BsArrowUpCircle } from "react-icons/bs";
 
@@ -54,7 +53,7 @@ const footerData = [
     title: "Projects",
     contents: [
       {
-        title: "Umamnin",
+        title: "Umamin",
         link: "https://umamin.link/",
       },
       {
@@ -72,11 +71,11 @@ const footerData = [
     contents: [
       {
         title: "Facebook",
-        link: "#",
+        link: "https://www.facebook.com/omsimos.agency",
       },
       {
         title: "Instagram",
-        link: "#",
+        link: "https://www.instagram.com/omsim.os",
       },
       {
         title: "GitHub",
@@ -109,9 +108,9 @@ export const Footer = ({ type, description }: FooterProps) => {
 
           <div className="flex md:justify-between mt-20 font-light gap-14 flex-wrap">
             {footerData.map(({ title, contents }) => (
-              <div key={title} className="space-y-3">
-                <span className="text-gray-400 text-lg">{title}</span>
-                <ul className="text-xl space-y-2">
+              <div key={title} className="space-y-3 xl:text-lg">
+                <span className="text-gray-400">{title}</span>
+                <ul className="space-y-2">
                   {contents.map((content) => (
                     <li
                       key={content.title}
@@ -124,7 +123,7 @@ export const Footer = ({ type, description }: FooterProps) => {
               </div>
             ))}
           </div>
-          <p className="text-gray-400 text-xl text-center mt-36">
+          <p className="text-gray-400 text-center mt-36 xl:text-lg">
             Omsimos &copy; 2023 All Rights Reserved
           </p>
         </Container>
