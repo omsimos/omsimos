@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Container } from "ui";
+import { Button, Container } from "ui";
 
 import umaminLogo from "~/images/projects/logo/umamin-logo.jpg";
 import portLogo from "~/images/projects/logo/port-logo.jpg";
@@ -26,7 +26,7 @@ const projects = [
   {
     name: "GDSC USLS",
     description:
-      "The official website of Google Developer Student Clubs in the University of St. La Salle!",
+      "The official website of Google Developer Student Clubs in the University of St. La Salle.",
     // thumbnail: gdscThumb,
     logo: gdscLogo,
     link: "https://gdsc-usls.live/",
@@ -35,78 +35,67 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <div className="border-[#3B3B3B] border-b-[1px]">
-      <Container className="tracking-tighter uppercase mb-36 xl:mb-60 xl:text-8xl text-6xl sm:text-7xl md:text-8xl md:text-left text-center font-normal leading-none">
-        <h1 className="text-center flex flex-col lg:block">
-          <span className="text-transparent bg-clip-text bg-gradient-to-b from-primary-100 to-white from-60% lg:mr-5">
-            Featured
-          </span>
-          <span>Projects</span>
-        </h1>
+    <div className="mb-80 border-b-[1px] border-gray-600 lg:mb-[30rem]">
+      <Container>
+        <h3 className="mb-20 bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-center text-2xl tracking-tight text-transparent sm:text-3xl md:text-5xl lg:leading-[1.1]">
+          Featured Projects
+        </h3>
       </Container>
+      <div className="grid xl:grid-cols-3">
+        {projects.map(({ name, description, logo, link }, i) => {
+          return (
+            <div
+              className="group relative flex min-h-[80vh] flex-col justify-between border-r-[1px] border-t-[1px] border-[#3B3B3B] p-20 last-of-type:border-r-0 md:flex-row lg:gap-10 xl:flex-col xl:gap-0"
+              key={name}
+            >
+              <span className="text-1xl block text-center font-light md:hidden md:text-left lg:text-2xl xl:block">{`(0${
+                i + 1
+              }.)`}</span>
 
-      {projects.map((project, i) => {
-        const { name, description, logo, link } = project;
+              <Image
+                src={logo}
+                priority
+                quality={100}
+                alt={name}
+                className="pointer-events-none -z-10 object-cover transition-opacity duration-700 ease-in-out group-hover:opacity-100 sm:scale-75 xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2 xl:opacity-0"
+              />
 
-        return (
-          <div
-            className="border-t-[1px] border-t-[#3B3B3B] py-36 sm:py-56 lg:py-0"
-            key={name}
-          >
-            <Container>
-              <div className="lg:grid grid-cols-5 flex flex-col">
-                <div
-                  className={`border-[#3B3B3B] col-span-2 flex items-center mx-auto ${
-                    (i + 1) % 2 === 0
-                      ? "col-start-4 lg:border-l-[1px] lg:pl-20"
-                      : "col-start-1 lg:border-r-[1px] lg:pr-20"
-                  }`}
-                >
-                  <div className=" md:space-y-12 space-y-7 lg:text-left text-center">
-                    <span className="xl:text-4xl lg:text-3xl 2xl:text-5xl text-2xl font-light">{`0${
-                      i + 1
-                    }.`}</span>
-                    <p className="xl:text-6xl lg:text-5xl 2xl:text-7xl text-4xl mx-auto font-light">
-                      {name}
-                    </p>
-                    <p className="2xl:text-3xl lg:text-2xl text-xl lg:w-full w-3/4 md:w-2/3 lg:mx-0 mx-auto text-gray-400 font-light">
-                      {description}
-                    </p>
+              <p className="font-regular block text-center text-2xl transition-opacity duration-700 ease-in-out sm:text-3xl md:hidden md:text-left xl:block xl:text-4xl xl:group-hover:pointer-events-none xl:group-hover:opacity-0 2xl:text-[2.6rem]">
+                {name}
+              </p>
+              <p className="mx-auto block w-full py-5 text-center text-lg font-light text-gray-400 transition-opacity duration-700 ease-in-out sm:w-2/3 sm:py-8 md:mx-0 md:hidden md:w-2/3 md:py-0 md:text-left lg:mx-0 lg:w-full lg:text-2xl xl:block xl:group-hover:pointer-events-none xl:group-hover:opacity-0 2xl:text-2xl">
+                {description}
+              </p>
 
-                    <a href={link} target="_blank">
-                      <button
-                        type="button"
-                        className="border border-gray-300 text-lg 
-                        xl:text-2xl font-light mt-8 px-5 xl:px-10 py-2 xl:py-3 rounded-full"
-                      >
-                        Visit Website
-                      </button>
-                    </a>
-                  </div>
-                </div>
+              <a href={link} target="_blank">
+                <Button
+                  name="Visit Website"
+                  className="mx-auto block md:mx-0 md:hidden xl:flex"
+                />
+              </a>
 
-                <div
-                  className={`lg:py-48 2xl:py-96 col-span-3 ${
-                    (i + 1) % 2 === 0
-                      ? "col-start-1 row-start-1 lg:mr-20 ml-auto mr-auto"
-                      : "col-start-3 lg:ml-20 ml-auto mr-auto"
-                  }`}
-                >
-                  <Image
-                    src={logo}
-                    className="2xl:scale-100 scale-50 lg:scale-75 "
-                    alt={`${name} Logo`}
-                    width={500}
-                  />
-                  <p className="text-gray-400 mt-2 text-center sm:-translate-y-32 -translate-y-[6.5rem] lg:-translate-y-16 2xl:-translate-y-0  2xl:text-left">
-                    Website * Mobile
+              <div className="hidden flex-col justify-center space-y-20 md:flex xl:hidden">
+                <span className="text-1xl text-center font-light md:text-left lg:text-2xl">{`(0${
+                  i + 1
+                }.)`}</span>
+
+                <div>
+                  <p className="font-regular mb-10 text-left text-3xl">
+                    {name}
+                  </p>
+                  <p className="w-full text-left text-xl font-light text-gray-400 lg:mx-0 lg:w-3/4 lg:text-2xl">
+                    {description}
                   </p>
                 </div>
+
+                <a href={link} target="_blank">
+                  <Button name="Visit Website" className="mx-auto md:mx-0" />
+                </a>
               </div>
-            </Container>
-          </div>
-        );
-      })}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

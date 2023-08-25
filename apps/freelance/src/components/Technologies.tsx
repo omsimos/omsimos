@@ -7,20 +7,58 @@ import {
 } from "react-icons/si";
 import { Container } from "ui";
 
-export const Technologies = () => {
-  return (
-    <section className="xl:my-60 my-36 border-y border-[#3B3B3B] lg:py-28 py-20  gap-y-16 grid place-items-center">
-      <Container>
-        <h3 className="uppercase mb-12 md:mb-20 text-sm sm:text-md lg:text-lg xl:text-xl tracking-[0.2em] text-gray-300 text-center">
-          Powering Your Website With Modern Technologies
-        </h3>
+import Image from "next/image";
+import gradientSide from "~/images/gradient-side.jpg";
 
-        <div className="flex gap-10 sm:gap-16 w-full md:gap-20 lg:gap-28 xl:gap-36 justify-center lg:text-4xl xl:text-5xl md:text-4xl sm:text-3xl text-2xl text-gray-100">
-          {[SiNextdotjs, SiReact, SiTailwindcss, SiTypescript, SiVercel].map(
-            (Icon) => (
-              <Icon key={Icon.toString()} />
-            )
-          )}
+export const Technologies = () => {
+  const icons = [
+    {
+      component: SiNextdotjs,
+      description: "Web development framework",
+    },
+    {
+      component: SiReact,
+      description: "Library for web interfaces",
+    },
+    {
+      component: SiTailwindcss,
+      description: "A utility-first CSS framework",
+    },
+    {
+      component: SiTypescript,
+      description: "Strongly typed programming language",
+    },
+    {
+      component: SiVercel,
+      description: "Frontend cloud from the creators of Next.js ",
+    },
+  ];
+  return (
+    <section className="relative mb-80 lg:mb-[30rem]">
+      <Image
+        src={gradientSide}
+        priority
+        quality={100}
+        alt="side gradient"
+        className="pointer-events-none absolute -top-72 right-0 -z-10 h-full -scale-x-100 mix-blend-screen sm:h-[230%] lg:-top-48"
+      />
+
+      <Container>
+        <h3 className="mb-20 bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-center text-2xl tracking-tight text-transparent sm:text-3xl md:text-left md:text-5xl lg:leading-[1.1]">
+          Powering your website <br /> with modern technologies
+        </h3>
+        <div className="flex flex-wrap justify-center gap-12 md:justify-start">
+          {icons.map((icon) => (
+            <div
+              key={icon.component.toString()}
+              className="flex h-64 w-64 flex-col justify-between rounded-xl border-[1px] border-gray-600 p-10 md:h-72 md:w-72"
+            >
+              <icon.component className="text-4xl text-gray-100 xl:text-5xl" />
+              <p className="text-lg font-light md:text-xl">
+                {icon.description}
+              </p>
+            </div>
+          ))}
         </div>
       </Container>
     </section>
