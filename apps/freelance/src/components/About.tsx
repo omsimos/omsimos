@@ -19,7 +19,7 @@ export const About = () => {
           About us
         </h2>
 
-        <h2 className="w-full text-xl font-light leading-snug tracking-tighter sm:w-3/4 sm:text-2xl md:leading-snug lg:w-2/3 lg:text-3xl lg:leading-snug xl:text-4xl xl:leading-snug">
+        <h2 className="w-full text-xl font-light leading-snug tracking-tighter sm:text-2xl md:leading-snug lg:text-3xl lg:leading-snug xl:text-4xl xl:leading-snug xl:max-w-[800px] lg:max-w-[700px] md:max-w-[600px] sm:max-w-[500px] max-w-[400px]">
           We are a team of passionate developers and designers. Our shared
           vision is to ignite the digital landscape with creativity and
           innovation by transforming ideas into digital realities.
@@ -41,11 +41,11 @@ export const About = () => {
           Your Vision, Our Mission
         </h2>
 
-        <h2 className="w-full text-xl font-light leading-snug tracking-tighter sm:w-3/4 sm:text-2xl md:leading-snug lg:w-5/6 lg:text-3xl lg:leading-snug xl:w-3/4 xl:text-4xl xl:leading-snug">
-          When you bring your ideas to us, we embark on a collaborative journey
-          to turn them into a digital masterpiece. Whether it&apos;s a website,
-          graphics design, or any other project, we immerse ourselves in the
-          creative process to craft solutions that resonate with your vision.{" "}
+        <h2 className="w-full text-xl font-light leading-snug tracking-tighter sm:text-2xl md:leading-snug lg:text-3xl lg:leading-snug xl:text-4xl xl:leading-snug xl:max-w-[800px] lg:max-w-[700px] md:max-w-[600px] sm:max-w-[500px] max-w-[400px]">
+          Bring your vision to us, and we&apos;ll embark on a collaborative journey
+          to turn your ideas into a digital masterpiece. We* immerse ourselves
+          in the creative process to craft solutions that resonate with your
+          vision.
         </h2>
 
         <Button name="Meet the team" />
