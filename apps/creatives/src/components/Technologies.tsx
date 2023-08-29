@@ -5,7 +5,7 @@ import {
   SiTypescript,
   SiVercel,
 } from "react-icons/si";
-import { Container } from "ui";
+import { Container } from "@omsimos/ui";
 
 import Image from "next/image";
 import gradientSide from "~/images/gradient-side.jpg";

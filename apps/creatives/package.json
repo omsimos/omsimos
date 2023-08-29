@@ -1,5 +1,5 @@
 {
-  "name": "freelance",
+  "name": "creatives",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,13 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "latest",
+    "next": "^13.4.19",
     "next-seo": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
     "sharp": "^0.32.1",
-    "ui": "workspace:*"
+    "@omsimos/ui": "workspace:*"
   },
   "devDependencies": {
     "@omsimos/configs": "workspace:*",

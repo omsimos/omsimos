@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Container, Footer } from "ui";
+import { Container } from "@omsimos/ui";
 
 import { Technologies, Projects, About } from "~/components";
 import bgImg from "~/images/bg-img.jpg";
@@ -28,7 +28,6 @@ export default function Freelance() {
       <About />
       <Technologies />
       <Projects />
-      <Footer type="creatives" description="Let's weave your dream" />
     </main>
   );
 }
