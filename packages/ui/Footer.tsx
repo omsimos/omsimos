@@ -1,5 +1,6 @@
 import { Container } from "./Container";
 import { BsArrowUpCircle } from "react-icons/bs";
+import Link from "next/link";
 
 type FooterProps = {
   type: "collective" | "creatives";
@@ -12,11 +13,11 @@ const footerData = [
     contents: [
       {
         title: "Our Story",
-        link: "#",
+        link: "/story",
       },
       {
-        title: "The Team",
-        link: "#",
+        title: "Services",
+        link: "/services",
       },
     ],
   },
@@ -93,13 +94,13 @@ export const Footer = ({ type, description }: FooterProps) => {
                       key={content.title}
                       className="hover:text-gray-300 transition-colors"
                     >
-                      <a
+                      <Link
                         href={content.link}
-                        target="_blank"
+                        target={title === "Agency" ? "_self" : "_blank"}
                         rel="noreferrer noopener"
                       >
                         {content.title}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
