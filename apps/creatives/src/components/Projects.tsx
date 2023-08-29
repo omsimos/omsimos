@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button, Container } from "ui";
+import { Button, Container } from "@omsimos/ui";
 
 import umaminLogo from "~/images/projects/logo/umamin-logo.jpg";
 import portLogo from "~/images/projects/logo/port-logo.jpg";

@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { Button, Container } from "ui";
 import { useRouter } from "next/router";
 import { RiAsterisk } from "react-icons/ri";
+import { Button, Container } from "@omsimos/ui";
 import gradientSide from "~/images/gradient-side.jpg";
 
 export const About = () => {

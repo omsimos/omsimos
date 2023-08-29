@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Container } from "ui";
+import { Container } from "@omsimos/ui";
 import gradientSide from "~/images/gradient-side.jpg";
 
 export default function Story() {

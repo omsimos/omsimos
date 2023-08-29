@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Container } from "ui";
+import { Container } from "@omsimos/ui";
 
 import { Technologies, Projects, About } from "~/components";
 import bgImg from "~/images/bg-img.jpg";
