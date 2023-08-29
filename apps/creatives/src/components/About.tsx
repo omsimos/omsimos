@@ -50,8 +50,6 @@ export const About = () => {
           ourselves in the creative process to craft solutions that resonate
           with your vision.
         </h2>
-
-        <Button name="Meet the team" />
       </Container>
     </section>
   );
