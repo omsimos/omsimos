@@ -36,7 +36,7 @@ export const About = () => {
         <span>
           <RiAsterisk className="text-primary-100" />
         </span>
-        <span>COLLECTIVE</span>
+        <span>CREATIVES</span>
       </div>
 
       <Container className="space-y-8 md:space-y-10 lg:space-y-14 lg:pl-48 xl:space-y-16">
@@ -46,9 +46,9 @@ export const About = () => {
 
         <h2 className="w-full max-w-[400px] text-xl font-light leading-snug tracking-tighter sm:max-w-[500px] sm:text-2xl md:max-w-[600px] md:leading-snug lg:max-w-[700px] lg:text-3xl lg:leading-snug xl:max-w-[800px] xl:text-4xl xl:leading-snug">
           Bring your vision to us, and we&apos;ll embark on a collaborative
-          journey to turn your ideas into a digital masterpiece. We* immerse
-          ourselves in the creative process to craft solutions that resonate
-          with your vision.
+          journey to turn your ideas into a digital masterpiece. We
+          <span className="text-primary-100">*</span> immerse ourselves in the
+          creative process to craft solutions that resonate with your vision.
         </h2>
       </Container>
     </section>
