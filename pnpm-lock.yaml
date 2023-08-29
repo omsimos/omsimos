@@ -26,6 +26,9 @@ importers:
 
   apps/collective:
     dependencies:
+      '@omsimos/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       next:
         specifier: latest
         version: 13.4.19(react-dom@18.2.0)(react@18.2.0)
@@ -38,9 +41,6 @@ importers:
       sharp:
         specifier: ^0.32.1
         version: 0.32.1
-      ui:
-        specifier: workspace:*
-        version: link:../../packages/ui
     devDependencies:
       '@omsimos/configs':
         specifier: workspace:*
@@ -75,6 +75,9 @@ importers:
 
   apps/creatives:
     dependencies:
+      '@omsimos/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       next:
         specifier: ^13.4.19
         version: 13.4.19(react-dom@18.2.0)(react@18.2.0)
@@ -93,9 +96,6 @@ importers:
       sharp:
         specifier: ^0.32.1
         version: 0.32.1
-      ui:
-        specifier: workspace:*
-        version: link:../../packages/ui
     devDependencies:
       '@omsimos/configs':
         specifier: workspace:*
