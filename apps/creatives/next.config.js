@@ -1,4 +1,4 @@
 module.exports = {
   reactStrictMode: true,
-  transpilePackages: ["ui, configs"],
+  transpilePackages: ["@omsimos/ui, @omsimos/configs"],
 };
