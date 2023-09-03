@@ -6,7 +6,9 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "~/images/*": ["./src/assets/images/*"]
+      "~/images/*": ["./src/assets/images/*"],
+      "~/hooks/*": ["./src/hooks/*"],
+      "~/gsap/*": ["./src/gsap/*"]
     }
   }
 }
