@@ -9,6 +9,19 @@ export const ScrollAnimation = ({
   children: React.ReactNode;
 }) => {
   gsap.registerPlugin(ScrollTrigger);
+  // Fn for creating a new scrollTrigger instance
+  function scrollTrig(trigger: string, start: string, scrub: number | boolean) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger,
+        start,
+        scrub,
+        markers: process.env["NODE_ENV"] === "development",
+      },
+    });
+
+    return tl;
+  }
 
   // Responsible for onScroll (intersection) animation
   function scrollTrigText(
@@ -64,6 +77,21 @@ export const ScrollAnimation = ({
         stag: 0.3,
       },
     ];
+
+    scrollTrig("#technologies", "top bottom", 1.5).fromTo(
+      "#technology-title span, #technology-items div",
+      {
+        y: 250,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        stagger: 0.3,
+        ease: "power4.out",
+      }
+    );
 
     textsTarget.forEach(({ trigger, target, stag }) => {
       scrollTrigText(trigger, target, stag);
