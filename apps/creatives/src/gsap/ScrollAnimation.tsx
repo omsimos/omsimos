@@ -25,7 +25,7 @@ export const ScrollAnimation = ({
       },
       {
         scrollTrigger: {
-          markers: process.env.NODE_ENV === "development",
+          markers: process.env["NODE_ENV"] === "development",
           start: start || "top bottom",
           trigger: trigger as string,
           toggleActions: "restart none none reset",
@@ -41,6 +41,17 @@ export const ScrollAnimation = ({
 
   useLayoutEffect(() => {
     // Responsible for onScroll (intersection) animation
+    gsap.to("#omsimos-creatives-title", {
+      scrollTrigger: {
+        markers: process.env["NODE_ENV"] === "development",
+        trigger: "#omsimos-creatives-title",
+        toggleActions: "restart none none reset",
+        start: "top bottom",
+        scrub: 1.5,
+      },
+      x: 80,
+    });
+
     const textsTarget = [
       {
         trigger: "#about-container",
