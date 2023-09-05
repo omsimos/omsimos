@@ -32,9 +32,10 @@ export const About = () => {
           id="about-description"
           className="w-full max-w-[400px] text-xl font-light leading-snug tracking-tighter sm:max-w-[500px] sm:text-2xl md:max-w-[600px] md:leading-snug lg:max-w-[700px] lg:text-3xl lg:leading-snug xl:max-w-[800px] xl:text-4xl xl:leading-snug"
         >
-          We are a team of passionate developers and designers. Our shared
-          vision is to ignite the digital landscape with creativity and
-          innovation by transforming ideas into digital realities.
+          We<span className="text-primary-100">*</span> are a team of passionate
+          developers and designers. Our shared vision is to ignite the digital
+          landscape with creativity and innovation by transforming ideas into
+          digital realities.
         </h2>
 
         <Button
