@@ -9,13 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@omsimos/ui": "workspace:*",
+    "gsap": "^3.12.2",
     "next": "^13.4.19",
     "next-seo": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
-    "sharp": "^0.32.1",
-    "@omsimos/ui": "workspace:*"
+    "sharp": "^0.32.1"
   },
   "devDependencies": {
     "@omsimos/configs": "workspace:*",

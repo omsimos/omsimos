@@ -7,6 +7,7 @@
 @layer components {
   body {
     background-color: #000;
+    overflow-y: hidden;
   }
 
   .hover-effect {
