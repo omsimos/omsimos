@@ -3,7 +3,7 @@ import { Container } from "./Container";
 
 export const Navbar = () => {
   return (
-    <Container className="flex justify-between items-center pt-12 z-40">
+    <Container className="flex justify-between items-center pt-12 z-30">
       <Link href="/" className="font-grotesk font-light uppercase text-xl ">
         Omsimos
       </Link>
