@@ -45,16 +45,20 @@ export const About = () => {
         />
       </Container>
 
-      <div className="w-screen items-center overflow-x-hidden bg-gradient-to-t from-[#8c8c8c] to-white bg-clip-text text-transparent [font-size:clamp(60px,10vw,200px)]">
+      <div className="relative z-20 w-full items-center overflow-x-hidden">
         <div
           id="omsimos-creatives-title"
-          className="flex -translate-x-96 items-center gap-5  md:gap-10"
+          className="flex items-center gap-5 [font-size:clamp(60px,10vw,200px)] md:gap-10"
         >
-          <span>OMSIMOS</span>
+          <span className="bg-gradient-to-t from-[#8c8c8c] to-white bg-clip-text text-transparent ">
+            OMSIMOS
+          </span>
           <span>
             <RiAsterisk id="asterisk-rotate" className="text-primary-100" />
           </span>
-          <span>CREATIVES</span>
+          <span className="bg-gradient-to-t from-[#8c8c8c] to-white bg-clip-text text-transparent ">
+            CREATIVES
+          </span>
         </div>
       </div>
 
