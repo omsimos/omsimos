@@ -4,17 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
+@layer components {
   body {
     background-color: #000;
   }
-}
 
-@layer utilities {
   .hover-effect {
     cursor: pointer;
     position: relative;

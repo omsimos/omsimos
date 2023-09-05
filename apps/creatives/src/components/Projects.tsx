@@ -35,7 +35,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <div id='projects' className="mb-80 scroll-mt-14 border-b-[1px] border-gray-600 lg:mb-[30rem]">
+    <div id='projects' className="mb-80 border-b-[1px] border-gray-600 lg:mb-[30rem]">
       <Container>
         <h3 className="mb-20 bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-center text-2xl tracking-tight text-transparent sm:text-3xl md:text-5xl lg:leading-[1.1]">
           Featured Projects

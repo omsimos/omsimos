@@ -19,10 +19,6 @@ const footerData = [
         title: "Services",
         link: "/services",
       },
-      {
-        title: "Contact",
-        link: "/contact",
-      },
     ],
   },
   {
