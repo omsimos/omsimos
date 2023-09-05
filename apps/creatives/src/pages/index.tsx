@@ -3,13 +3,10 @@ import { Container } from "@omsimos/ui";
 
 import { Technologies, Projects, About } from "~/components";
 import bgImg from "~/images/bg-img.jpg";
-import { Loader } from "~/gsap/Loader";
-import { ScrollAnimation } from "~/gsap/ScrollAnimation";
 
 export default function Freelance() {
   return (
     <>
-      <Loader />
       <main>
         <section>
           <Container>
@@ -33,11 +30,9 @@ export default function Freelance() {
           </div>
         </section>
 
-        <ScrollAnimation>
-          <About />
-          <Technologies />
-          <Projects />
-        </ScrollAnimation>
+        <About />
+        <Technologies />
+        <Projects />
       </main>
     </>
   );
