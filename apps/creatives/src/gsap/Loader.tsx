@@ -16,18 +16,21 @@ export const Loader = () => {
     });
 
     if (!unmountLoader) {
-      tl.fromTo(
-        "#main-text span",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 2.5,
-          stagger: 0.2,
-          ease: "power3.inOut",
-        }
-      )
+      tl.to("body", {
+        overflowY: "hidden",
+      })
+        .fromTo(
+          "#main-text span",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 2.5,
+            stagger: 0.2,
+            ease: "power3.inOut",
+          }
+        )
         .to("#loader-bg", {
           duration: 1.5,
           ease: "power3.inOut",
