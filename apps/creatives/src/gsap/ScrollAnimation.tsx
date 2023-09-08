@@ -10,12 +10,18 @@ export const ScrollAnimation = ({
 }) => {
   gsap.registerPlugin(ScrollTrigger);
   // Fn for creating a new scrollTrigger instance
-  function scrollTrig(trigger: string, start: string, scrub: number | boolean) {
+  function scrollTrig(
+    trigger: string,
+    start: string,
+    scrub: number | boolean,
+    end = "bottom top"
+  ) {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger,
         start,
-        scrub,
+        end,
+        scrub: scrub || false,
         markers: process.env["NODE_ENV"] === "development",
       },
     });
@@ -53,7 +59,7 @@ export const ScrollAnimation = ({
   }
 
   useLayoutEffect(() => {
-    // Responsible for onScroll (intersection) animation
+    // Marquee scroll animation
     gsap.to("#omsimos-creatives-title", {
       scrollTrigger: {
         markers: process.env["NODE_ENV"] === "development",
@@ -65,6 +71,40 @@ export const ScrollAnimation = ({
       x: 80,
     });
 
+    gsap.fromTo(
+      "#projects-title, #projects-list .project-item",
+      {
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: "#projects",
+          start: "top bottom",
+          markers: process.env["NODE_ENV"] === "development",
+        },
+        // y: 0,
+        opacity: 1,
+        duration: 1.5,
+        stagger: 0.1,
+        ease: "power4.out",
+      }
+    );
+
+    // scrollTrig("#projects", "top bottom", false).fromTo(
+    //   "#projects-title, #projects-list div",
+    //   {
+    //     // y: 250,
+    //     opacity: 0,
+    //   },
+    //   {
+    //     // y: 0,
+    //     opacity: 1,
+    //     duration: 1.5,
+    //     stagger: 0.1,
+    //     ease: "power4.out",
+    //   }
+    // );
+
     const textsTarget = [
       {
         trigger: "#about-container",
@@ -73,12 +113,12 @@ export const ScrollAnimation = ({
       },
       {
         trigger: "#mission-container",
-        target: "#mission-container h2",
+        target: "#mission-container h2, #mission-title",
         stag: 0.3,
       },
     ];
 
-    scrollTrig("#technologies", "top bottom", 1.5).fromTo(
+    scrollTrig("#technologies", "top bottom", 1.5, "20% top").fromTo(
       "#technology-title span, #technology-items div",
       {
         y: 250,
@@ -101,5 +141,5 @@ export const ScrollAnimation = ({
     // });
   }, []);
 
-  return <div>{children}</div>;
+  return <>{children}</>;
 };

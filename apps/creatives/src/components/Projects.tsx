@@ -35,17 +35,22 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <div id='projects' className="mb-80 scroll-mt-14 border-b-[1px] border-gray-600 lg:mb-[30rem]">
+    <div
+      id="projects"
+      className="mb-80 scroll-mt-14 border-b-[1px] border-gray-600 lg:mb-[30rem]"
+    >
       <Container>
-        <h3 className="mb-20 bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-center text-2xl tracking-tight text-transparent sm:text-3xl md:text-5xl lg:leading-[1.1]">
-          Featured Projects
-        </h3>
+        <div id="projects-title">
+          <h3 className="mb-20 bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-center text-2xl tracking-tight text-transparent sm:text-3xl md:text-5xl lg:leading-[1.1]">
+            Featured Projects
+          </h3>
+        </div>
       </Container>
-      <div className="grid xl:grid-cols-3">
+      <div id="projects-list" className="grid xl:grid-cols-3">
         {projects.map(({ name, description, logo, link }, i) => {
           return (
             <div
-              className="group relative flex min-h-[80vh] flex-col justify-between border-r-[1px] border-t-[1px] border-[#3B3B3B] p-20 last-of-type:border-r-0 md:flex-row lg:gap-10 xl:flex-col xl:gap-0"
+              className="project-item group relative flex min-h-[80vh] flex-col justify-between border-r-[1px] border-t-[1px] border-[#3B3B3B] p-20 last-of-type:border-r-0 md:flex-row lg:gap-10 xl:flex-col xl:gap-0"
               key={name}
             >
               <span className="text-1xl block text-center font-light md:hidden md:text-left lg:text-2xl xl:block">{`(0${

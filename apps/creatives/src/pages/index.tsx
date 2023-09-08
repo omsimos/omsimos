@@ -3,10 +3,13 @@ import { Container } from "@omsimos/ui";
 
 import { Technologies, Projects, About } from "~/components";
 import bgImg from "~/images/bg-img.jpg";
+import { Loader } from "~/gsap/Loader";
+import { ScrollAnimation } from "~/gsap/ScrollAnimation";
 
 export default function Freelance() {
   return (
     <>
+      <Loader />
       <main>
         <section>
           <Container>
@@ -25,14 +28,17 @@ export default function Freelance() {
               priority
               quality={100}
               alt="bg image"
+              draggable={false}
               className="pointer-events-none -mb-96 mt-44 h-full w-full sm:mt-28 md:mt-0"
             />
           </div>
         </section>
 
-        <About />
-        <Technologies />
-        <Projects />
+        <ScrollAnimation>
+          <About />
+          <Technologies />
+          <Projects />
+        </ScrollAnimation>
       </main>
     </>
   );
