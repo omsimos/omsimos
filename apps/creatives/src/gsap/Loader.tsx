@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useLayoutEffect } from "react";
 import { gsap } from "gsap";
-import useLayoutEffect from "~/hooks/useIsomorphicLayoutEffect";
 
 export const Loader = () => {
   const [unmountLoader, setUnmountLoader] = useState(false);

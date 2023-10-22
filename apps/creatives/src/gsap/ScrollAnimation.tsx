@@ -1,7 +1,7 @@
 import React from "react";
+import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import useLayoutEffect from "~/hooks/useIsomorphicLayoutEffect";
 
 export const ScrollAnimation = ({
   children,
