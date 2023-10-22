@@ -1,16 +1,16 @@
 import Image from "next/image";
 import { Container } from "@omsimos/ui";
-
 import { Technologies, Projects, About } from "~/components";
+
 import bgImg from "~/images/bg-img.jpg";
-import { Loader } from "~/gsap/Loader";
 import { ScrollAnimation } from "~/gsap/ScrollAnimation";
+import { Loader } from "~/gsap/Loader";
 
 export default function Freelance() {
   return (
     <>
-      <Loader />
       <main>
+        <Loader />
         <section>
           <Container>
             <h1
