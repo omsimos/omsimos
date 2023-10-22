@@ -5,17 +5,20 @@ import { Technologies, Projects, About } from "~/components";
 import bgImg from "~/images/bg-img.jpg";
 import { ScrollAnimation } from "~/gsap/ScrollAnimation";
 import { Loader } from "~/gsap/Loader";
+import { useStore } from "../hooks/useStore";
 
 export default function Freelance() {
+  const { unmountLoader } = useStore();
+
   return (
     <>
       <main>
-        <Loader />
+        {!unmountLoader && <Loader />}
         <section>
           <Container>
             <h1
               id="main-text"
-              className="relative z-50 mt-40 text-2xl tracking-tight sm:text-3xl md:mt-52 md:text-4xl lg:text-5xl lg:leading-[1.1] [&>span]:bg-gradient-to-tr [&>span]:from-[#8c8c8c] [&>span]:to-white [&>span]:bg-clip-text [&>span]:text-transparent [&>span]:opacity-0"
+              className="relative z-50 mt-40 text-2xl tracking-tight sm:text-3xl md:mt-52 md:text-4xl lg:text-5xl lg:leading-[1.1] [&>span]:bg-gradient-to-tr [&>span]:from-[#8c8c8c] [&>span]:to-white [&>span]:bg-clip-text [&>span]:text-transparent"
             >
               <span>Weaving</span> <span>dreams</span> <br />
               <span>into</span> <span>digital</span>{" "}
