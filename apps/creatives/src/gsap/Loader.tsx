@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useLayoutEffect } from "react";
+import React, { useCallback, useState, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 export const Loader = () => {
@@ -8,48 +8,55 @@ export const Loader = () => {
     setUnmountLoader(true);
   }, []);
 
-  useLayoutEffect(() => {
-    const tl: GSAPTimeline = gsap.timeline({
-      delay: 1,
-      ease: "power3.inOut",
-    });
+  const comp = useRef<HTMLDivElement>(null);
 
-    if (!unmountLoader) {
-      tl.to("body", {
-        overflowY: "hidden",
-      })
-        .fromTo(
-          "#main-text span",
-          {
-            opacity: 0,
-          },
-          {
-            opacity: 1,
-            duration: 2.5,
-            stagger: 0.2,
-            ease: "power3.inOut",
-          }
-        )
-        .to("#loader-bg", {
-          duration: 1.5,
-          ease: "power3.inOut",
-          opacity: 0,
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const tl: GSAPTimeline = gsap.timeline({
+        delay: 1,
+        ease: "power3.inOut",
+      });
+
+      if (!unmountLoader) {
+        tl.to("body", {
+          overflowY: "hidden",
         })
-        .to(
-          "body",
-          {
-            overflowY: "auto",
-            onComplete: () => handleUnmountLoader(),
-          },
-          ">"
-        );
-    }
+          .fromTo(
+            "#main-text span",
+            {
+              opacity: 0,
+            },
+            {
+              opacity: 1,
+              duration: 2.5,
+              stagger: 0.2,
+              ease: "power3.inOut",
+            }
+          )
+          .to("#loader-bg", {
+            duration: 1.5,
+            ease: "power3.inOut",
+            opacity: 0,
+          })
+          .to(
+            "body",
+            {
+              overflowY: "auto",
+              onComplete: () => handleUnmountLoader(),
+            },
+            ">"
+          );
+      }
+    }, comp);
+
+    return () => ctx.revert(); // cleanup
   }, [handleUnmountLoader, unmountLoader]);
 
   return (
     <>
       {!unmountLoader && (
         <div
+          ref={comp}
           id="loader-bg"
           className="fixed left-0 top-0 z-50 h-screen w-screen bg-black"
         />
