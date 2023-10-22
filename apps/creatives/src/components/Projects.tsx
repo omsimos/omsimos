@@ -26,7 +26,7 @@ const projects = [
   {
     name: "GDSC USLS",
     description:
-      "The official website of Google Developer Student Clubs in the University of St. La Salle.",
+      "The official website of Google Developer Student Clubs at the University of St. La Salle.",
     // thumbnail: gdscThumb,
     logo: gdscLogo,
     link: "https://gdsc-usls.live/",
