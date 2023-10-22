@@ -16,7 +16,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
-    "sharp": "^0.32.1"
+    "sharp": "^0.32.1",
+    "zustand": "^4.4.4"
   },
   "devDependencies": {
     "@omsimos/configs": "workspace:*",
