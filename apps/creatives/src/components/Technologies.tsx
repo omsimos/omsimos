@@ -44,11 +44,8 @@ export const Technologies = () => {
       />
 
       <Container>
-        <h3
-          id="technology-title"
-          className="mb-20 bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-center text-2xl tracking-tight text-transparent sm:text-3xl md:text-left md:text-5xl lg:leading-[1.1]"
-        >
-          <span>
+        <h3 id="technology-title" className="mb-20 ">
+          <span className="bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-center text-2xl tracking-tight text-transparent sm:text-3xl md:text-left md:text-5xl lg:leading-[1.1]">
             Powering your website <br /> with modern technologies
           </span>
         </h3>
