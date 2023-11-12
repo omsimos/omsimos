@@ -1,10 +1,8 @@
 import Image from "next/image";
 import { Container } from "@omsimos/ui";
-import { Technologies, Projects, About } from "~/components";
+import { Technologies, Projects, About, Loader } from "~/components";
 
 import bgImg from "~/images/bg-img.jpg";
-import { ScrollAnimation } from "~/gsap/ScrollAnimation";
-import { Loader } from "~/gsap/Loader";
 import { useStore } from "../hooks/useStore";
 
 export default function Freelance() {
@@ -37,11 +35,9 @@ export default function Freelance() {
           </div>
         </section>
 
-        <ScrollAnimation>
-          <About />
-          <Technologies />
-          <Projects />
-        </ScrollAnimation>
+        <About />
+        <Technologies />
+        <Projects />
       </main>
     </>
   );

@@ -1,16 +1,18 @@
-import React, { useRef } from "react";
-import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
-export const ScrollAnimation = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
-  const comp = useRef<HTMLDivElement>(null);
+import { useStore } from "~/hooks/useStore";
 
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
+
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+export function GSAP({ children }: { children: React.ReactNode }) {
+  const app = useRef<HTMLDivElement>(null);
+  const { setUnmountLoader } = useStore();
+
   // Fn for creating a new scrollTrigger instance
   function scrollTrig(
     trigger: string,
@@ -60,7 +62,7 @@ export const ScrollAnimation = ({
     );
   }
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
       // Marquee scroll animation
       gsap.to("#omsimos-creatives-title", {
@@ -142,10 +144,48 @@ export const ScrollAnimation = ({
       // textsTarget.forEach(({ trigger, target, stag, start }) => {
       //   scrollTrigText(trigger, target || trigger, stag, start);
       // });
-    }, comp);
 
-    return () => ctx.revert(); // cleanup
+      const tl: GSAPTimeline = gsap.timeline({
+        delay: 1,
+        ease: "power3.inOut",
+      });
+
+      tl.to("#parent", {
+        overflowY: "hidden",
+      })
+        .fromTo(
+          "#main-text span",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 2.5,
+            stagger: 0.2,
+            ease: "power3.inOut",
+          }
+        )
+        .to("#loader-bg", {
+          duration: 1.5,
+          ease: "power3.inOut",
+          opacity: 0,
+        })
+        .to(
+          "#parent",
+          {
+            overflowY: "auto",
+            onComplete: () => setUnmountLoader(true),
+          },
+          ">"
+        );
+    }, app);
+
+    return () => ctx.revert();
   }, []);
 
-  return <div ref={comp}>{children}</div>;
-};
+  return (
+    <div id="parent" ref={app}>
+      {children}
+    </div>
+  );
+}

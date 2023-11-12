@@ -6,7 +6,10 @@
 
 @layer components {
   body {
-    background-color: #000;
+    background: #000000;
+  }
+
+  #parent {
     overflow-y: hidden;
   }
 
