@@ -1,9 +1,9 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useLayoutEffect } from "react";
 import { gsap } from "gsap";
-import useLayoutEffect from "~/hooks/useIsomorphicLayoutEffect";
+import { useStore } from "../hooks/useStore";
 
 export const Loader = () => {
-  const [unmountLoader, setUnmountLoader] = useState(false);
+  const { setUnmountLoader } = useStore();
 
   const handleUnmountLoader = useCallback(() => {
     setUnmountLoader(true);
@@ -15,8 +15,10 @@ export const Loader = () => {
       ease: "power3.inOut",
     });
 
-    if (!unmountLoader) {
-      tl.fromTo(
+    tl.to("body", {
+      overflowY: "hidden",
+    })
+      .fromTo(
         "#main-text span",
         {
           opacity: 0,
@@ -28,30 +30,25 @@ export const Loader = () => {
           ease: "power3.inOut",
         }
       )
-        .to("#loader-bg", {
-          duration: 1.5,
-          ease: "power3.inOut",
-          opacity: 0,
-        })
-        .to(
-          "body",
-          {
-            overflowY: "auto",
-            onComplete: () => handleUnmountLoader(),
-          },
-          ">"
-        );
-    }
-  }, [handleUnmountLoader, unmountLoader]);
+      .to("#loader-bg", {
+        duration: 1.5,
+        ease: "power3.inOut",
+        opacity: 0,
+      })
+      .to(
+        "body",
+        {
+          overflowY: "auto",
+          onComplete: () => handleUnmountLoader(),
+        },
+        ">"
+      );
+  }, [handleUnmountLoader]);
 
   return (
-    <>
-      {!unmountLoader && (
-        <div
-          id="loader-bg"
-          className="fixed left-0 top-0 z-50 h-screen w-screen bg-black"
-        />
-      )}
-    </>
+    <div
+      id="loader-bg"
+      className="fixed left-0 top-0 z-50 h-screen w-screen bg-black"
+    />
   );
 };
