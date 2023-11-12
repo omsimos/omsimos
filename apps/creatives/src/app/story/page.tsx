@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Container } from "@omsimos/ui";
+import { Container } from "~/components/ui";
 import gradientSide from "~/images/gradient-side.jpg";
 
 export default function Story() {
@@ -9,15 +9,15 @@ export default function Story() {
         src={gradientSide}
         quality={100}
         alt="bg image"
-        className="pointer-events-none absolute 2xl:left-0 2xl:right-auto right-0 z-10 2xl:-top-[12rem] -top-72 h-full -scale-x-100 mix-blend-screen 2xl:scale-100"
+        className="pointer-events-none absolute -top-72 right-0 z-10 h-full -scale-x-100 mix-blend-screen 2xl:-top-[12rem] 2xl:left-0 2xl:right-auto 2xl:scale-100"
       />
       <Container className="bg-gradient-to-t from-[#8c8c8c] to-white bg-clip-text text-transparent [font-size:clamp(60px,10vw,200px)]">
         <h1>
-          OUR<span className="text-primary-100 font-light">*</span> STORY
+          OUR<span className="font-light text-primary-100">*</span> STORY
         </h1>
       </Container>
 
-      <Container className="mt-12 space-y-8 md:space-y-10 lg:space-y-14 2xl:pl-48 md:pl-24 sm:pl-12 xl:space-y-16">
+      <Container className="mt-12 space-y-8 sm:pl-12 md:space-y-10 md:pl-24 lg:space-y-14 xl:space-y-16 2xl:pl-48">
         <h2 className="bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-2xl tracking-tight text-transparent sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.1]">
           OMSIMOS<span className="font-light">©</span> Collective
         </h2>
@@ -47,7 +47,7 @@ export default function Story() {
         src={gradientSide}
         quality={100}
         alt="bg image"
-        className="pointer-events-none absolute 2xl:right-0 2xl:left-auto left-0 top-[45rem] md:top-[50rem] lg:top-[60rem] z-10 h-full scale-x-100 mix-blend-screen 2xl:-scale-100"
+        className="pointer-events-none absolute left-0 top-[45rem] z-10 h-full scale-x-100 mix-blend-screen md:top-[50rem] lg:top-[60rem] 2xl:left-auto 2xl:right-0 2xl:-scale-100"
       />
     </section>
   );

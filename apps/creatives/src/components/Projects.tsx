@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button, Container } from "@omsimos/ui";
+import { Button, Container } from "~/components/ui";
 
 import umaminLogo from "~/images/projects/logo/umamin-logo.jpg";
 import portLogo from "~/images/projects/logo/port-logo.jpg";
@@ -72,12 +72,11 @@ export const Projects = () => {
                 {description}
               </p>
 
-              <a href={link} target="_blank">
-                <Button
-                  name="Visit Website"
-                  className="mx-auto block md:mx-0 md:hidden xl:flex"
-                />
-              </a>
+              <Button
+                route={link}
+                name="Visit Website "
+                className="md:self-start self-center md:hidden xl:flex"
+              />
 
               <div className="hidden flex-col justify-center space-y-20 md:flex xl:hidden">
                 <span className="text-1xl text-center font-light md:text-left lg:text-2xl">{`(0${
@@ -93,9 +92,11 @@ export const Projects = () => {
                   </p>
                 </div>
 
-                <a href={link} target="_blank">
-                  <Button name="Visit Website" className="mx-auto md:mx-0" />
-                </a>
+                <Button
+                  route={link}
+                  name="Visit Website 2"
+                  className="mx-auto md:mx-0"
+                />
               </div>
             </div>
           );

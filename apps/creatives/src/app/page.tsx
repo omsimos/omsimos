@@ -1,11 +1,13 @@
+"use client"
+
 import Image from "next/image";
-import { Container } from "@omsimos/ui";
+import { Container } from "~/components/ui";
 import { Technologies, Projects, About, Loader } from "~/components";
 
 import bgImg from "~/images/bg-img.jpg";
 import { useStore } from "../hooks/useStore";
 
-export default function Freelance() {
+export default function Home() {
   const { unmountLoader } = useStore();
 
   return (

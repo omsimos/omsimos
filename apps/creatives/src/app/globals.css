@@ -5,10 +5,6 @@
 @tailwind utilities;
 
 @layer components {
-  body {
-    background: #000000;
-  }
-
   #parent {
     overflow-y: hidden;
   }
