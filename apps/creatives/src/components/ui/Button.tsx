@@ -3,6 +3,7 @@ import * as React from "react";
 import { TfiArrowRight } from "react-icons/tfi";
 
 type Props = {
+  id?: string;
   className?: string;
   name: string;
   route?: string;
@@ -11,10 +12,11 @@ type Props = {
   HTMLButtonElement
 >;
 
-export const Button = ({ className, name, route, ...rest }: Props) => {
+export const Button = ({ id, className, name, route, ...rest }: Props) => {
   return route ? (
     <Link
       href={route}
+      id={id || ""}
       className={`group/button inline-flex items-center gap-2 border-b-[1px] pb-1 text-lg font-light transition-opacity ease-out hover:opacity-80 md:text-xl xl:text-2xl ${className}`}
     >
       <p>{name}</p>
