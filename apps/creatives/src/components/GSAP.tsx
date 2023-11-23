@@ -1,8 +1,9 @@
-"use client"
+"use client";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useLayoutEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 import { useStore } from "~/hooks/useStore";
 
@@ -14,6 +15,8 @@ const useIsomorphicLayoutEffect =
 export function GSAP({ children }: { children: React.ReactNode }) {
   const app = useRef<HTMLDivElement>(null);
   const { setUnmountLoader } = useStore();
+
+  const pathname = usePathname();
 
   // Fn for creating a new scrollTrigger instance
   function scrollTrig(
@@ -65,97 +68,95 @@ export function GSAP({ children }: { children: React.ReactNode }) {
   }
 
   useIsomorphicLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      // Marquee scroll animation
-      gsap.to("#omsimos-creatives-title", {
-        scrollTrigger: {
-          markers: process.env["NODE_ENV"] === "development",
-          trigger: "#omsimos-creatives-title",
-          toggleActions: "restart none none reset",
-          start: "top bottom",
-          scrub: 1.5,
-        },
-        x: 80,
-      });
-
-      gsap.fromTo(
-        "#projects-title, #projects-list .project-item",
-        {
-          opacity: 0,
-        },
-        {
+    if (pathname === "/") {
+      let ctx = gsap.context(() => {
+        // Marquee scroll animation
+        gsap.to("#omsimos-creatives-title", {
           scrollTrigger: {
-            trigger: "#projects",
-            start: "top bottom",
             markers: process.env["NODE_ENV"] === "development",
+            trigger: "#omsimos-creatives-title",
+            toggleActions: "restart none none reset",
+            start: "top bottom",
+            scrub: 1.5,
           },
-          // y: 0,
-          opacity: 1,
-          duration: 1.5,
-          stagger: 0.1,
-          ease: "power4.out",
-        }
-      );
+          x: 80,
+        });
 
-      // scrollTrig("#projects", "top bottom", false).fromTo(
-      //   "#projects-title, #projects-list div",
-      //   {
-      //     // y: 250,
-      //     opacity: 0,
-      //   },
-      //   {
-      //     // y: 0,
-      //     opacity: 1,
-      //     duration: 1.5,
-      //     stagger: 0.1,
-      //     ease: "power4.out",
-      //   }
-      // );
+        gsap.fromTo(
+          "#projects-title, #projects-list .project-item",
+          {
+            opacity: 0,
+          },
+          {
+            scrollTrigger: {
+              trigger: "#projects",
+              start: "top bottom",
+              markers: process.env["NODE_ENV"] === "development",
+            },
+            // y: 0,
+            opacity: 1,
+            duration: 1.5,
+            stagger: 0.1,
+            ease: "power4.out",
+          }
+        );
 
-      const textsTarget = [
-        {
-          trigger: "#about-container",
-          target: "#about-title, #about-description,#about-button",
-          stag: 0.3,
-        },
-        {
-          trigger: "#mission-container",
-          target: "#mission-container h2, #mission-title",
-          stag: 0.3,
-        },
-      ];
+        // scrollTrig("#projects", "top bottom", false).fromTo(
+        //   "#projects-title, #projects-list div",
+        //   {
+        //     // y: 250,
+        //     opacity: 0,
+        //   },
+        //   {
+        //     // y: 0,
+        //     opacity: 1,
+        //     duration: 1.5,
+        //     stagger: 0.1,
+        //     ease: "power4.out",
+        //   }
+        // );
 
-      scrollTrig("#technologies", "top bottom", 1.5, "20% top").fromTo(
-        "#technology-title span, #technology-items div",
-        {
-          y: 250,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.5,
-          stagger: 0.3,
-          ease: "power4.out",
-        }
-      );
+        const textsTarget = [
+          {
+            trigger: "#about-container",
+            target: "#about-title, #about-description,#about-button",
+            stag: 0.3,
+          },
+          {
+            trigger: "#mission-container",
+            target: "#mission-container h2, #mission-title",
+            stag: 0.3,
+          },
+        ];
 
-      textsTarget.forEach(({ trigger, target, stag }) => {
-        scrollTrigText(trigger, target, stag);
-      });
-      // textsTarget.forEach(({ trigger, target, stag, start }) => {
-      //   scrollTrigText(trigger, target || trigger, stag, start);
-      // });
+        scrollTrig("#technologies", "top bottom", 1.5, "20% top").fromTo(
+          "#technology-title span, #technology-items div",
+          {
+            y: 250,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1.5,
+            stagger: 0.3,
+            ease: "power4.out",
+          }
+        );
 
-      const tl: GSAPTimeline = gsap.timeline({
-        delay: 1,
-        ease: "power3.inOut",
-      });
+        textsTarget.forEach(({ trigger, target, stag }) => {
+          scrollTrigText(trigger, target, stag);
+        });
+        // textsTarget.forEach(({ trigger, target, stag, start }) => {
+        //   scrollTrigText(trigger, target || trigger, stag, start);
+        // });
 
-      tl.to("#parent", {
-        overflowY: "hidden",
-      })
-        .fromTo(
+        const tl: GSAPTimeline = gsap.timeline({
+          delay: 1,
+          ease: "power3.inOut",
+        });
+
+        tl.fromTo(
           "#main-text span",
           {
             opacity: 0,
@@ -166,23 +167,16 @@ export function GSAP({ children }: { children: React.ReactNode }) {
             stagger: 0.2,
             ease: "power3.inOut",
           }
-        )
-        .to("#loader-bg", {
+        ).to("#loader-bg", {
           duration: 1.5,
           ease: "power3.inOut",
           opacity: 0,
-        })
-        .to(
-          "#parent",
-          {
-            overflowY: "auto",
-            onComplete: () => setUnmountLoader(true),
-          },
-          ">"
-        );
-    }, app);
+          onComplete: () => setUnmountLoader(true),
+        });
+      }, app);
 
-    return () => ctx.revert();
+      return () => ctx.revert();
+    }
   }, []);
 
   return (
