@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { Container } from "~/components/ui";
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <main>
-        {!unmountLoader && <Loader />}
+        {/* {!unmountLoader && <Loader />} */}
         <section>
           <Container>
             <h1
@@ -31,6 +31,7 @@ export default function Home() {
               priority
               quality={100}
               alt="bg image"
+              placeholder="blur"
               draggable={false}
               className="pointer-events-none -mb-96 mt-44 h-full w-full sm:mt-28 md:mt-0"
             />
