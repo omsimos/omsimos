@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Container } from "@omsimos/ui";
+import { Container } from "~/components/ui";
 import gradientSide from "~/images/gradient-side.jpg";
 
 export default function Services() {

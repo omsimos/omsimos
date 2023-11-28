@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Container } from "@omsimos/ui";
+import { Container } from "~/components/ui";
 import { TfiArrowRight } from "react-icons/tfi";
 import gradientSide from "~/images/gradient-side.jpg";
 
@@ -16,7 +16,7 @@ export default function Contact() {
       <Container className="space-y-8">
         <a
           href="mailto:omsimos.agency@gmail.com"
-          className="bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-2xl tracking-tight text-transparent mix-blend-difference sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.1] block"
+          className="block bg-gradient-to-t from-[#c6c7c7] to-white bg-clip-text text-2xl tracking-tight text-transparent mix-blend-difference sm:text-3xl md:text-4xl lg:text-5xl lg:leading-[1.1]"
         >
           omsimos.agency@gmail.com
         </a>

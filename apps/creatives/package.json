@@ -9,10 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@omsimos/ui": "workspace:*",
     "gsap": "^3.12.2",
     "next": "^13.4.19",
-    "next-seo": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
@@ -26,6 +24,7 @@
     "@types/react-dom": "^18.0.7",
     "autoprefixer": "^10.4.14",
     "eslint-config-custom": "workspace:*",
+    "eslint-config-next": "^14.0.2",
     "postcss": "^8.4.23",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.4.1",

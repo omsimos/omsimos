@@ -1,13 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { RiAsterisk } from "react-icons/ri";
-import { Button, Container } from "@omsimos/ui";
+import { Button, Container } from "~/components/ui";
 import gradientSide from "~/images/gradient-side.jpg";
 
 export const About = () => {
-  const { push } = useRouter();
-
   return (
     <section className="relative mb-80 mt-[30rem] space-y-60 sm:mt-[35rem] md:mt-[40rem] md:space-y-72 lg:mb-[30rem] lg:mt-[50rem] xl:mt-[70rem] xl:space-y-96 2xl:mt-[80rem]">
       <Image
@@ -37,11 +34,7 @@ export const About = () => {
           digital realities.
         </h2>
 
-        <Button
-          id="about-button"
-          onClick={() => push("/story")}
-          name="Our Story"
-        />
+        <Button id="about-button" route="/story" name="Our Story" />
       </Container>
 
       <div className="relative z-20 w-full items-center overflow-x-hidden">
