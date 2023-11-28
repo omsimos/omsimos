@@ -1,5 +1,3 @@
-"use client";
-
 import type { Metadata } from "next";
 import { Navbar, Footer } from "~/components/ui";
 import { Space_Grotesk } from "next/font/google";
