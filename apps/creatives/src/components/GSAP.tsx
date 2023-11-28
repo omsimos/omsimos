@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function GSAP({ children }: { children: React.ReactNode }) {
   const app = useRef<HTMLDivElement>(null);
-  const { setUnmountLoader } = useStore();
+  const { unmountLoader } = useStore();
 
   const pathname = usePathname();
 
@@ -65,10 +65,8 @@ export function GSAP({ children }: { children: React.ReactNode }) {
   }
 
   useLayoutEffect(() => {
-    console.log(pathname);
     if (pathname === "/") {
       let ctx = gsap.context(() => {
-        // Marquee scroll animation
         const tl: GSAPTimeline = gsap.timeline({
           ease: "power3.inOut",
         });
@@ -84,13 +82,9 @@ export function GSAP({ children }: { children: React.ReactNode }) {
             stagger: 0.2,
             ease: "power3.inOut",
           }
-        ).to("#loader-bg", {
-          duration: 1.5,
-          ease: "power3.inOut",
-          opacity: 0,
-          onComplete: () => setUnmountLoader(true),
-        });
+        );
 
+        // Marquee scroll animation
         gsap.to("#omsimos-creatives-title", {
           scrollTrigger: {
             markers: process.env["NODE_ENV"] === "development",
