@@ -1,9 +1,21 @@
+"use client";
+
+import gsap from "gsap";
 import Image from "next/image";
 import { Container } from "~/components/ui";
 import { TfiArrowRight } from "react-icons/tfi";
 import gradientSide from "~/images/gradient-side.jpg";
+import { useLayoutEffect } from "react";
 
 export default function Contact() {
+  useLayoutEffect(() => {
+    const tl = gsap.timeline();
+
+    tl.to("body", {
+      overflowY: "auto",
+    });
+  });
+
   return (
     <section className="relative mb-80 mt-40 lg:mb-[30rem]">
       <Image
