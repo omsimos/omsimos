@@ -1,8 +1,20 @@
+"use client";
+
+import gsap from "gsap";
 import Image from "next/image";
+import { useLayoutEffect } from "react";
 import { Container } from "~/components/ui";
 import gradientSide from "~/images/gradient-side.jpg";
 
 export default function Story() {
+  useLayoutEffect(() => {
+    const tl = gsap.timeline();
+
+    tl.to("body", {
+      overflowY: "auto",
+    });
+  });
+
   return (
     <section className="relative mb-80 mt-40 flex flex-col gap-y-60 md:gap-y-72 lg:mb-[30rem] xl:gap-y-96">
       <Image
