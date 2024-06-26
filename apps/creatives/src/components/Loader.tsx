@@ -1,6 +1,7 @@
 "use client";
 
 import gsap from "gsap";
+import { useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import { useStore } from "~/hooks/useStore";
 
@@ -9,7 +10,7 @@ gsap.registerPlugin(useGSAP);
 export const Loader = () => {
   const { setUnmountLoader } = useStore();
 
-  useGSAP(() => {
+  useEffect(() => {
     const tl = gsap.timeline();
 
     tl.to("#loader-bg", {
@@ -21,7 +22,7 @@ export const Loader = () => {
       overflowY: "auto",
       onComplete: () => setUnmountLoader(true),
     });
-  });
+  }, []);
 
   return (
     <div
