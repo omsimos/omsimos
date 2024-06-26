@@ -1,13 +1,15 @@
 "use client";
 
 import gsap from "gsap";
-import { useLayoutEffect } from "react";
+import { useGSAP } from "@gsap/react";
 import { useStore } from "~/hooks/useStore";
+
+gsap.registerPlugin(useGSAP);
 
 export const Loader = () => {
   const { setUnmountLoader } = useStore();
 
-  useLayoutEffect(() => {
+  useGSAP(() => {
     const tl = gsap.timeline();
 
     tl.to("#loader-bg", {
