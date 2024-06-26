@@ -9,12 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "gsap": "^3.12.2",
-    "next": "^13.4.19",
+    "@gsap/react": "^2.1.1",
+    "gsap": "^3.12.5",
+    "next": "^14.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
-    "sharp": "^0.32.1",
+    "sharp": "^0.33.4",
     "zustand": "^4.4.4"
   },
   "devDependencies": {

@@ -29,7 +29,7 @@ const projects = [
       "The official website of Google Developer Student Clubs in the University of St. La Salle.",
     // thumbnail: gdscThumb,
     logo: gdscLogo,
-    link: "https://gdsc-usls.live/",
+    link: "https://gdsc-usls-landing.vercel.app/",
   },
 ];
 
@@ -75,7 +75,7 @@ export const Projects = () => {
               <Button
                 route={link}
                 name="Visit Website "
-                className="md:self-start self-center md:hidden xl:flex"
+                className="self-center md:hidden md:self-start xl:flex"
               />
 
               <div className="hidden flex-col justify-center space-y-20 md:flex xl:hidden">
