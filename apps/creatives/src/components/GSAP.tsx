@@ -1,7 +1,6 @@
 "use client";
 
 import gsap from "gsap";
-import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { usePathname } from "next/navigation";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
