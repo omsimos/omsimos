@@ -4,16 +4,14 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
-    "husky": "^8.0.0",
     "prettier": "^2.5.1",
     "turbo": "^1.10.2"
   },
-  "packageManager": "pnpm@7.15.0",
+  "packageManager": "pnpm@9.10.0",
   "name": "omsimos"
 }
