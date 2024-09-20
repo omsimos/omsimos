@@ -1,72 +1,69 @@
 "use client";
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import { usePathname } from "next/navigation";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { useStore } from "~/hooks/useStore";
-
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export function GSAP({ children }: { children: React.ReactNode }) {
-  const app = useRef<HTMLDivElement>(null);
-  const { unmountLoader } = useStore();
+  const { contextSafe } = useGSAP();
 
   const pathname = usePathname();
 
   // Fn for creating a new scrollTrigger instance
-  function scrollTrig(
-    trigger: string,
-    start: string,
-    scrub: number | boolean,
-    end = "bottom top"
-  ) {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger,
-        start,
-        end,
-        scrub: scrub || false,
-        markers: process.env["NODE_ENV"] === "development",
-      },
-    });
+  const scrollTrig = contextSafe(
+    (
+      trigger: string,
+      start: string,
+      scrub: number | boolean,
+      end = "bottom top"
+    ) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger,
+          start,
+          end,
+          scrub: scrub || false,
+          markers: process.env["NODE_ENV"] === "development",
+        },
+      });
 
-    return tl;
-  }
+      return tl;
+    }
+  );
 
   // Responsible for onScroll (intersection) animation
-  function scrollTrigText(
-    trigger: string,
-    target: string,
-    stag?: number,
-    start?: string
-  ) {
-    gsap.fromTo(
-      target,
-      {
-        y: 250,
-        opacity: 0,
-      },
-      {
-        scrollTrigger: {
-          markers: process.env["NODE_ENV"] === "development",
-          start: start || "top bottom",
-          trigger: trigger as string,
-          toggleActions: "restart none none reset",
+  const scrollTrigText = contextSafe(
+    (trigger: string, target: string, stag?: number, start?: string) => {
+      gsap.fromTo(
+        target,
+        {
+          y: 250,
+          opacity: 0,
         },
-        y: 0,
-        opacity: 1,
-        duration: 1.5,
-        stagger: stag,
-        ease: "power4.out",
-      }
-    );
-  }
+        {
+          scrollTrigger: {
+            markers: process.env["NODE_ENV"] === "development",
+            start: start || "top bottom",
+            trigger: trigger as string,
+            toggleActions: "restart none none reset",
+          },
+          y: 0,
+          opacity: 1,
+          duration: 1.5,
+          stagger: stag,
+          ease: "power4.out",
+        }
+      );
+    }
+  );
 
-  useLayoutEffect(() => {
-    if (pathname === "/") {
-      let ctx = gsap.context(() => {
+  useGSAP(
+    () => {
+      if (pathname === "/") {
         const tl: GSAPTimeline = gsap.timeline({
           ease: "power3.inOut",
         });
@@ -164,15 +161,10 @@ export function GSAP({ children }: { children: React.ReactNode }) {
         // textsTarget.forEach(({ trigger, target, stag, start }) => {
         //   scrollTrigText(trigger, target || trigger, stag, start);
         // });
-      }, app);
-
-      return () => ctx.revert();
-    }
-  }, [pathname]);
-
-  return (
-    <div id="parent" ref={app}>
-      {children}
-    </div>
+      }
+    },
+    { dependencies: [pathname] }
   );
+
+  return <div id="parent">{children}</div>;
 }
